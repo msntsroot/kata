@@ -1,0 +1,35 @@
+id = 92
+slug = "escadas"
+titulo = "Subindo escadas"
+arco = 10
+nivel = 4
+tags = ["programação dinâmica"]
+usa = [54]
+assinatura = "def resolver(n: int) -> int"
+enunciado = """
+Você sobe 1 ou 2 degraus por vez. De quantas formas sobe `n` degraus?
+`n` até 1000.
+"""
+exemplos = [
+  { entrada = [3] },
+  { entrada = [1] },
+]
+testes = [
+  [0],
+  [2],
+  [4],
+  [10],
+  [45],
+  [1000],
+]
+dicas = [
+  "O último passo foi de 1 ou de 2 degraus.",
+  "`formas(n) = formas(n - 1) + formas(n - 2)`. Já viu isso antes?",
+  "É Fibonacci deslocado: guarde só os dois últimos.",
+]
+referencias = [
+]
+conceito = """
+Programação dinâmica: a resposta grande sai de respostas menores, cada uma calculada uma vez só.
+A pergunta-chave é "qual foi a última decisão?": ela quebra o problema em subproblemas.
+"""

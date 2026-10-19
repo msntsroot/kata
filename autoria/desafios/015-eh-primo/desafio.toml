@@ -1,0 +1,43 @@
+id = 15
+slug = "eh-primo"
+titulo = "É primo?"
+arco = 2
+nivel = 3
+tags = ["laço", "matemática"]
+usa = [1]
+assinatura = "def resolver(n: int) -> bool"
+enunciado = """
+`n` é primo? (Maior que 1 e divisível só por 1 e por ele mesmo.)
+"""
+exemplos = [
+  { entrada = [7] },
+  { entrada = [12] },
+  { entrada = [1] },
+]
+testes = [
+  [2],
+  [3],
+  [4],
+  [0],
+  [-7],
+  [97],
+  [91],
+  [7919],
+  [1000003],
+  [999999],
+  [25],
+]
+dicas = [
+  "Procure um divisor. Achou um, não é primo.",
+  "Não precisa testar até n: se `d * d > n` e não achou divisor, não vai achar mais.",
+  "`d = 2; while d * d <= n: if n % d == 0: return False; d += 1`.",
+]
+referencias = [
+  { titulo = "Número primo (Wikipédia)", url = "https://pt.wikipedia.org/wiki/N%C3%BAmero_primo" },
+]
+conceito = """
+Se `n = a × b`, um dos dois é no máximo √n. Por isso basta testar até a raiz:
+para 1 milhão, são mil testes em vez de um milhão. É o primeiro corte de complexidade que você faz.
+"""
+[criterios]
+tempo = 3

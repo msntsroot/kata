@@ -1,0 +1,29 @@
+id = 75
+slug = "somas-de-prefixo"
+titulo = "Somas de prefixo"
+arco = 8
+nivel = 5
+tags = ["prefixo"]
+usa = [74]
+assinatura = "def resolver(nums: list, consultas: list) -> list"
+enunciado = """
+Para cada consulta `[i, j]`, a soma de `nums[i..j]` (inclusive).
+100 mil números e 100 mil consultas.
+"""
+exemplos = [
+  { entrada = [[1, 2, 3, 4, 5], [[0, 2], [1, 4], [3, 3]]] },
+]
+dicas = [
+  "Pré-calcule algo uma vez para responder cada consulta em O(1).",
+  "`p[k]` = soma dos k primeiros. Então a soma de i a j é a diferença de dois prefixos.",
+  "`p = [0]`; `p.append(p[-1] + x)`; resposta `p[j + 1] - p[i]`.",
+]
+referencias = [
+  { titulo = "Prefix sum (Wikipedia)", url = "https://en.wikipedia.org/wiki/Prefix_sum" },
+]
+conceito = """
+Pré-processar uma vez (O(n)) para responder muitas perguntas rápido (O(1) cada).
+Planilhas, imagens (soma de regiões) e bancos de dados usam a mesma troca.
+"""
+[criterios]
+tempo = 4

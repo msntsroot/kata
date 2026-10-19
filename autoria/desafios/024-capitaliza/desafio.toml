@@ -1,0 +1,38 @@
+id = 24
+slug = "capitaliza"
+titulo = "Título"
+arco = 3
+nivel = 3
+tags = ["strings", "laço"]
+usa = [21]
+assinatura = "def resolver(frase: str) -> str"
+enunciado = """
+Primeira letra de cada palavra maiúscula, o resto minúsculo.
+Palavras separadas por um espaço.
+"""
+exemplos = [
+  { entrada = ["olá mundo"] },
+  { entrada = ["pYTHON é LEGAL"] },
+]
+testes = [
+  [""],
+  ["a"],
+  ["a b c"],
+  ["kata"],
+  ["UM DOIS TRES"],
+  ["x1 y2"],
+]
+dicas = [
+  "Separe em palavras, arrume cada uma, junte de volta.",
+  "`frase.split(\" \")` e `\" \".join(lista)`.",
+  "Cada palavra: `p[0].upper() + p[1:].lower()` (cuidado com a palavra vazia).",
+]
+referencias = [
+  { titulo = "Métodos de str", url = "https://docs.python.org/pt-br/3/library/stdtypes.html#string-methods" },
+]
+conceito = """
+Separar → transformar cada parte → juntar é um padrão que você vai usar muitas vezes.
+Fatias como `p[1:]` funcionam mesmo se a palavra tiver só uma letra (dão `""`).
+"""
+[criterios]
+proibido = ["title", "capitalize", "capwords"]

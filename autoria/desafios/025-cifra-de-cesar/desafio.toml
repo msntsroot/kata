@@ -1,0 +1,38 @@
+id = 25
+slug = "cifra-de-cesar"
+titulo = "Cifra de César"
+arco = 3
+nivel = 4
+tags = ["strings", "resto"]
+usa = [8]
+assinatura = "def resolver(texto: str, k: int) -> str"
+enunciado = """
+Ande `k` posições no alfabeto com cada letra minúscula (`z + 1 = a`).
+O resto fica igual. `k` pode ser negativo.
+"""
+exemplos = [
+  { entrada = ["abc", 1] },
+  { entrada = ["xyz", 3] },
+  { entrada = ["ola, mundo!", 13] },
+]
+testes = [
+  ["", 5],
+  ["abc", 26],
+  ["abc", -1],
+  ["hello world", 52],
+  ["kata 2026", -27],
+  ["zzz", 1],
+  ["a", 1000],
+]
+dicas = [
+  "É o \"daqui a n dias\" com 26 dias.",
+  "`ord(\"c\") - ord(\"a\")` dá 2; `chr(ord(\"a\") + 2)` volta para \"c\".",
+  "`chr((ord(c) - ord(\"a\") + k) % 26 + ord(\"a\"))`.",
+]
+referencias = [
+  { titulo = "Cifra de César (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Cifra_de_C%C3%A9sar" },
+]
+conceito = """
+Letras são números por baixo (`ord`/`chr`). Transformar → fazer conta → transformar de volta
+é um padrão de mapeamento. O `%` garante que a volta do `z` caia no `a`.
+"""

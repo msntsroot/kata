@@ -1,0 +1,30 @@
+id = 96
+slug = "subsequencia-comum"
+titulo = "Em comum, em ordem"
+arco = 10
+nivel = 7
+tags = ["programação dinâmica", "strings"]
+usa = [93]
+assinatura = "def resolver(a: str, b: str) -> int"
+enunciado = """
+O tamanho da maior subsequência comum (letras na mesma ordem, não precisam ser vizinhas).
+`"abcde"` e `"ace"` → 3. Até 1000 letras cada.
+"""
+exemplos = [
+  { entrada = ["abcde", "ace"] },
+  { entrada = ["abc", "def"] },
+]
+dicas = [
+  "Compare o último caractere de cada uma.",
+  "Iguais: 1 + resposta sem os dois. Diferentes: o melhor entre tirar de `a` ou tirar de `b`.",
+  "Uma tabela `(len(a)+1) × (len(b)+1)`; ou só duas linhas dela.",
+]
+referencias = [
+  { titulo = "Subsequência comum mais longa (Wikipedia)", url = "https://en.wikipedia.org/wiki/Longest_common_subsequence" },
+]
+conceito = """
+DP em duas dimensões: o estado é "quanto de cada string já foi usado". O `diff` do git e a
+comparação de DNA são variações disto.
+"""
+[criterios]
+tempo = 5

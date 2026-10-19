@@ -1,0 +1,30 @@
+id = 76
+slug = "sem-repetir"
+titulo = "O maior trecho sem repetir"
+arco = 8
+nivel = 6
+tags = ["janela deslizante", "conjuntos"]
+usa = [44, 74]
+assinatura = "def resolver(s: str) -> int"
+enunciado = """
+O tamanho do maior trecho contínuo de `s` sem letra repetida.
+`s` tem até 200 mil caracteres.
+"""
+exemplos = [
+  { entrada = ["abcabcbb"] },
+  { entrada = ["bbbb"] },
+  { entrada = ["pwwkew"] },
+]
+dicas = [
+  "A janela agora tem tamanho variável: cresce pela direita, encolhe pela esquerda.",
+  "Ao entrar uma letra repetida, tire letras da esquerda até ela sair.",
+  "Um `set` com as letras da janela; ou um dicionário com a última posição de cada letra para pular direto.",
+]
+referencias = [
+]
+conceito = """
+Janela variável: cada letra entra uma vez e sai no máximo uma vez, então é O(n) mesmo com o `while`
+interno. Contar "quantas vezes cada elemento é tocado" é como se analisa esse tipo de laço.
+"""
+[criterios]
+tempo = 4

@@ -1,0 +1,37 @@
+id = 23
+slug = "palindromo"
+titulo = "Palíndromo"
+arco = 3
+nivel = 3
+tags = ["strings"]
+usa = [22]
+assinatura = "def resolver(frase: str) -> bool"
+enunciado = """
+Lê igual de trás para frente? Ignore espaços e maiúsculas.
+"""
+exemplos = [
+  { entrada = ["Ame a ema"] },
+  { entrada = ["kata"] },
+  { entrada = ["arara"] },
+]
+testes = [
+  [""],
+  ["a"],
+  ["ab"],
+  ["Socorram me subi no onibus em Marrocos"],
+  ["A grama e amarga"],
+  ["abca"],
+  ["Anotaram a data da maratona"],
+]
+dicas = [
+  "Primeiro limpe a frase, depois compare.",
+  "`frase.replace(\" \", \"\").lower()`.",
+  "Compare a frase limpa com ela mesma invertida.",
+]
+referencias = [
+  { titulo = "Palíndromo (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Pal%C3%ADndromo" },
+]
+conceito = """
+Normalizar antes de comparar (minúsculas, sem espaços) é um passo comum em qualquer
+comparação de texto: buscas, logins, deduplicação.
+"""

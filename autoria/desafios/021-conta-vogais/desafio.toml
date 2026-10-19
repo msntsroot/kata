@@ -1,0 +1,35 @@
+id = 21
+slug = "conta-vogais"
+titulo = "Vogais"
+arco = 3
+nivel = 2
+tags = ["strings", "laço"]
+usa = []
+assinatura = "def resolver(texto: str) -> int"
+enunciado = """
+Quantas vogais (`a e i o u`, maiúsculas ou minúsculas) tem o `texto`? Sem acentos.
+"""
+exemplos = [
+  { entrada = ["banana"] },
+  { entrada = ["AEIOU xyz"] },
+]
+testes = [
+  [""],
+  ["bcdfg"],
+  ["Programar em Python"],
+  ["aaaaaaaaaa"],
+  ["UuUu!"],
+  ["o rato roeu a roupa do rei de roma"],
+]
+dicas = [
+  "Um `for` percorre a string letra por letra.",
+  "`letra in \"aeiou\"` diz se é vogal.",
+  "`texto.lower()` resolve as maiúsculas.",
+]
+referencias = [
+  { titulo = "Strings (tutorial)", url = "https://docs.python.org/pt-br/3/tutorial/introduction.html#text" },
+]
+conceito = """
+Strings são sequências: dá para percorrer com `for`, indexar com `[i]` e perguntar com `in`.
+O mesmo vale para listas e tuplas.
+"""

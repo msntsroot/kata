@@ -1,0 +1,35 @@
+id = 22
+slug = "inverte-texto"
+titulo = "Ao contrário"
+arco = 3
+nivel = 2
+tags = ["strings", "laço"]
+usa = [16]
+assinatura = "def resolver(texto: str) -> str"
+enunciado = """
+Retorne o `texto` invertido, montando-o com um laço.
+"""
+exemplos = [
+  { entrada = ["abc"] },
+  { entrada = ["kata"] },
+]
+testes = [
+  [""],
+  ["a"],
+  ["socorram-me subi no onibus em marrocos"],
+  ["12345"],
+  ["Olá!"],
+]
+dicas = [
+  "Lembra do número ao contrário? Mesma ideia.",
+  "Cada letra nova vai para a frente do que você já montou.",
+  "`inv = letra + inv`.",
+]
+referencias = [
+]
+conceito = """
+`letra + inv` (prefixar) inverte; `inv + letra` (sufixar) copia. Em Python também existe
+`texto[::-1]`: fatiamento com passo -1. Agora que você sabe o que ele faz por dentro, pode usá-lo.
+"""
+[criterios]
+proibido = ["reversed", "reverse", "join"]

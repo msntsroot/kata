@@ -1,0 +1,39 @@
+id = 64
+slug = "insercao"
+titulo = "Inserção"
+arco = 7
+nivel = 4
+tags = ["ordenação"]
+usa = [63]
+assinatura = "def resolver(nums: list, k: int) -> list"
+enunciado = """
+Insertion sort: para i = 1, 2, ..., pegue `nums[i]` e empurre-o para a esquerda
+até ficar no lugar certo entre os anteriores. Retorne a lista depois dos `k` primeiros passos.
+"""
+exemplos = [
+  { entrada = [[5, 2, 4, 6, 1, 3], 1] },
+  { entrada = [[5, 2, 4, 6, 1, 3], 3] },
+]
+testes = [
+  [[], 2],
+  [[1], 4],
+  [[3, 2, 1], 1],
+  [[3, 2, 1], 2],
+  [[4, 3, 2, 1, 0], 2],
+  [[20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1], 7],
+  [[1, 3, 2, 3, 1], 4],
+]
+dicas = [
+  "É como arrumar cartas na mão: cada carta nova escorrega até seu lugar.",
+  "Guarde `x = nums[i]` e desloque os maiores que ele uma casa para a direita.",
+  "`j = i - 1; while j >= 0 and nums[j] > x: nums[j + 1] = nums[j]; j -= 1`, depois `nums[j + 1] = x`.",
+]
+referencias = [
+  { titulo = "Insertion sort (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Insertion_sort" },
+]
+conceito = """
+Também O(n²) no pior caso, mas rápido em listas quase ordenadas (é O(n) se já estiver).
+O sort do Python (Timsort) usa inserção em pedaços pequenos.
+"""
+[criterios]
+proibido = ["sorted", "sort", "heapq", "bisect", "insert"]

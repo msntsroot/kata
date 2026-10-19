@@ -1,0 +1,37 @@
+id = 58
+slug = "inteiro-para-romano"
+titulo = "De volta aos romanos"
+arco = 6
+nivel = 4
+tags = ["guloso", "strings"]
+usa = [50, 6]
+assinatura = "def resolver(n: int) -> str"
+enunciado = """
+Escreva `1 <= n <= 3999` em algarismos romanos.
+"""
+exemplos = [
+  { entrada = [14] },
+  { entrada = [1994] },
+  { entrada = [3] },
+]
+testes = [
+  [1],
+  [4],
+  [9],
+  [40],
+  [444],
+  [2026],
+  [3999],
+  [800],
+]
+dicas = [
+  "Parece o problema das notas e moedas do dia 6.",
+  "Inclua as formas subtrativas como se fossem \"moedas\": 900 = CM, 400 = CD, 90, 40, 9, 4.",
+  "Lista de pares `(1000, \"M\"), (900, \"CM\"), ...`; enquanto couber, use.",
+]
+referencias = [
+]
+conceito = """
+Com as formas subtrativas na tabela, o problema vira o guloso das moedas. Às vezes a solução está
+em escolher uma representação melhor dos dados, não em código mais esperto.
+"""

@@ -1,0 +1,31 @@
+id = 89
+slug = "menor-caminho"
+titulo = "Menor caminho"
+arco = 9
+nivel = 6
+tags = ["grade", "bfs"]
+usa = [87, 88]
+assinatura = "def resolver(lab: list) -> int"
+enunciado = """
+Labirinto de strings: `"."` livre, `"#"` parede. Menor número de passos (cima, baixo,
+esquerda, direita) do canto superior esquerdo ao inferior direito; `-1` se não der. Até 200×200.
+"""
+exemplos = [
+  { entrada = [["..#", "#..", "#.."]] },
+  { entrada = [[".#", "#."]] },
+  { entrada = [["."]] },
+]
+dicas = [
+  "DFS acha um caminho, não o menor. Explore em camadas: tudo a 1 passo, depois a 2...",
+  "Isso é uma fila (dia 87), não uma pilha.",
+  "Guarde a distância de cada célula ao enfileirá-la; a primeira vez que chegar ao fim é a resposta.",
+]
+referencias = [
+  { titulo = "Busca em largura (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Busca_em_largura" },
+]
+conceito = """
+BFS (busca em largura): trocar a pilha da DFS por uma fila muda tudo. Agora as células saem
+em ordem de distância. GPS, redes sociais ("amigos de amigos") e jogos usam BFS e suas variações.
+"""
+[criterios]
+tempo = 5

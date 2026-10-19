@@ -1,0 +1,31 @@
+id = 99
+slug = "distancia-de-edicao"
+titulo = "Distância de edição"
+arco = 10
+nivel = 8
+tags = ["programação dinâmica", "strings"]
+usa = [96]
+assinatura = "def resolver(a: str, b: str) -> int"
+enunciado = """
+O menor número de operações (inserir, apagar ou trocar uma letra)
+para transformar `a` em `b`. Até 800 letras cada.
+"""
+exemplos = [
+  { entrada = ["gato", "pato"] },
+  { entrada = ["casa", "asas"] },
+  { entrada = ["", "abc"] },
+]
+dicas = [
+  "Mesma tabela do dia 96: o estado é quantas letras de cada já foram resolvidas.",
+  "Letras iguais: custo 0 a partir da diagonal. Diferentes: 1 + o menor entre trocar, inserir, apagar.",
+  "`d[i][j] = min(d[i-1][j] + 1, d[i][j-1] + 1, d[i-1][j-1] + (a[i-1] != b[j-1]))`; borda `d[i][0] = i`.",
+]
+referencias = [
+  { titulo = "Distância Levenshtein (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Dist%C3%A2ncia_Levenshtein" },
+]
+conceito = """
+É o que o corretor ortográfico usa para sugerir "você quis dizer...?". Cada célula da tabela é uma
+decisão sobre a última letra: a mesma pergunta do dia 92, agora com três escolhas.
+"""
+[criterios]
+tempo = 5

@@ -1,0 +1,31 @@
+id = 90
+slug = "jogo-da-vida"
+titulo = "Chefão: jogo da vida"
+arco = 9
+nivel = 6
+tags = ["matriz", "simulação", "chefão"]
+usa = [84, 88]
+assinatura = "def resolver(g: list, geracoes: int) -> list"
+enunciado = """
+Grade de 0 (morta) e 1 (viva); fora da grade é tudo morto. A cada geração:
+viva com 2 ou 3 vizinhas vivas (das 8) continua; morta com exatamente 3 nasce; o resto morre.
+Retorne a grade depois de `geracoes`.
+"""
+exemplos = [
+  { entrada = [[[0, 1, 0], [0, 1, 0], [0, 1, 0]], 1] },
+  { entrada = [[[1, 1], [1, 1]], 5] },
+]
+dicas = [
+  "Não altere a grade enquanto conta os vizinhos: calcule a próxima numa grade nova.",
+  "Uma função `vizinhos(g, i, j)` olhando os 8 deslocamentos que estão dentro da grade.",
+  "Deslocamentos: `for di in (-1, 0, 1): for dj in (-1, 0, 1): if di or dj:`.",
+]
+referencias = [
+  { titulo = "Jogo da vida (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Jogo_da_vida" },
+]
+conceito = """
+Regras locais simples geram comportamento global complexo (planadores, osciladores, até computadores).
+O bug clássico é atualizar no lugar: a célula vizinha já mudou quando você a lê. Estado antigo → estado novo.
+"""
+[criterios]
+tempo = 5

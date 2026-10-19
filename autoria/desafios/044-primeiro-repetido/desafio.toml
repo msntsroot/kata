@@ -1,0 +1,28 @@
+id = 44
+slug = "primeiro-repetido"
+titulo = "O primeiro que repete"
+arco = 5
+nivel = 3
+tags = ["conjuntos"]
+usa = [43]
+assinatura = "def resolver(nums: list) -> int"
+enunciado = """
+O primeiro valor que aparece pela segunda vez, lendo da esquerda.
+Nenhum repete: `None`.
+"""
+exemplos = [
+  { entrada = [[2, 5, 1, 2, 5]] },
+  { entrada = [[1, 2, 3]] },
+]
+dicas = [
+  "Lembre do que você já viu.",
+  "Um `set` de vistos.",
+  "Se `x in vistos`, achou. Senão, `vistos.add(x)`.",
+]
+referencias = [
+]
+conceito = """
+"Já vi isso?" com um set é a base de detectar ciclos, duplicatas e visitados em grafos (arco 9).
+"""
+[criterios]
+tempo = 3

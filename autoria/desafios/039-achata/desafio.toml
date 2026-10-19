@@ -1,0 +1,33 @@
+id = 39
+slug = "achata"
+titulo = "Achatar"
+arco = 4
+nivel = 3
+tags = ["listas"]
+usa = [31]
+assinatura = "def resolver(listas: list) -> list"
+enunciado = """
+Junte uma lista de listas numa lista só: `[[1, 2], [3], []] → [1, 2, 3]`.
+"""
+exemplos = [
+  { entrada = [[[1, 2], [3], []]] },
+  { entrada = [[]] },
+]
+testes = [
+  [[[]]],
+  [[[1]]],
+  [[[1, 2], [3, 4], [5, 6]]],
+  [[[0, 0, 0], [1, 1]]],
+  [[["a"], ["b", "c"]]],
+]
+dicas = [
+  "Dois laços, um dentro do outro.",
+  "Para cada lista, para cada item: adicione.",
+  "Ou: `res.extend(lista)`.",
+]
+referencias = [
+]
+conceito = """
+Laços aninhados percorrem estruturas aninhadas. Se as listas pudessem ter listas dentro de listas
+sem limite, laços não bastariam: é aí que entra a recursão (arco 6).
+"""

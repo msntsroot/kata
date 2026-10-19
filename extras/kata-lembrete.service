@@ -1,0 +1,6 @@
+[Unit]
+Description=kata: lembrete do desafio do dia
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/kata lembrete

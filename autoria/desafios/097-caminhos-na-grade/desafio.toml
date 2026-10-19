@@ -1,0 +1,29 @@
+id = 97
+slug = "caminhos-na-grade"
+titulo = "Quantos caminhos?"
+arco = 10
+nivel = 6
+tags = ["programação dinâmica", "grade", "revisão"]
+usa = [89, 92]
+assinatura = "def resolver(g: list) -> int"
+enunciado = """
+Grade de `"."` e `"#"`. Andando só para a direita ou para baixo, quantos caminhos vão
+do canto superior esquerdo ao inferior direito? Até 100×100.
+"""
+exemplos = [
+  { entrada = [["...", ".#.", "..."]] },
+  { entrada = [[".#", "#."]] },
+]
+dicas = [
+  "Numa célula só se chega de cima ou da esquerda.",
+  "`c[i][j] = c[i-1][j] + c[i][j-1]`, e 0 nas paredes.",
+  "Escadas (dia 92) em duas dimensões. A BFS do dia 89 acharia um caminho; aqui você conta todos.",
+]
+referencias = [
+]
+conceito = """
+Contar caminhos com BFS/DFS explode (são números com dezenas de dígitos). DP soma os caminhos
+que chegam em cada célula: cada uma é calculada uma vez.
+"""
+[criterios]
+tempo = 4

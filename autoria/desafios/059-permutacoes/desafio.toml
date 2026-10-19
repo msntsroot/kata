@@ -1,0 +1,40 @@
+id = 59
+slug = "permutacoes"
+titulo = "Todas as ordens"
+arco = 6
+nivel = 5
+tags = ["recursão", "backtracking"]
+usa = [56]
+assinatura = "def resolver(s: str) -> list"
+enunciado = """
+Todas as permutações das letras de `s`, sem repetidas, em ordem alfabética.
+Sem `itertools`.
+"""
+exemplos = [
+  { entrada = ["abc"] },
+  { entrada = ["aab"] },
+]
+testes = [
+  [""],
+  ["a"],
+  ["ab"],
+  ["abcd"],
+  ["aabb"],
+  ["kata"],
+  ["abcdef"],
+]
+dicas = [
+  "Escolha a primeira letra; o resto é uma permutação menor.",
+  "Para cada letra, junte-a com cada permutação do que sobrou.",
+  "Use um `set` para tirar repetidas e `sorted` no fim. Caso base: string vazia → `[\"\"]`.",
+]
+referencias = [
+  { titulo = "Backtracking (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Backtracking" },
+]
+conceito = """
+"Escolhe um, resolve o resto" gera todas as combinações: é o esqueleto do backtracking
+(sudoku, oito rainhas, labirintos). O número de permutações cresce como n!: 10 letras já são 3,6 milhões.
+"""
+[criterios]
+recursivo = true
+proibido = ["itertools", "permutations"]

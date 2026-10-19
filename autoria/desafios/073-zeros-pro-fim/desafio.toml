@@ -1,0 +1,37 @@
+id = 73
+slug = "zeros-pro-fim"
+titulo = "Zeros para o fim"
+arco = 8
+nivel = 4
+tags = ["dois ponteiros"]
+usa = [71]
+assinatura = "def resolver(nums: list) -> list"
+enunciado = """
+Mova os zeros para o fim mantendo a ordem do resto, na própria lista,
+e retorne-a.
+"""
+exemplos = [
+  { entrada = [[0, 1, 0, 3, 12]] },
+  { entrada = [[0]] },
+]
+testes = [
+  [[]],
+  [[1, 2, 3]],
+  [[0, 0, 0, 1]],
+  [[1, 0]],
+  [[4, 0, 5, 0, 0, 6, 7, 0]],
+  [[0, -1, 0, -2]],
+]
+dicas = [
+  "Um ponteiro lê, outro marca onde escrever o próximo não-zero.",
+  "Para cada não-zero lido, escreva-o na posição `escrita` e avance-a.",
+  "No fim, preencha com zeros de `escrita` até o final.",
+]
+referencias = [
+]
+conceito = """
+Leitor e escritor: dois ponteiros andando no mesmo sentido, um mais rápido. Serve para filtrar,
+compactar e remover duplicados sem criar outra lista.
+"""
+[criterios]
+proibido = ["sorted", "sort", "remove", "pop", "append", "insert", "list", "count"]

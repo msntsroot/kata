@@ -1,0 +1,33 @@
+id = 84
+slug = "diagonais"
+titulo = "Diagonais"
+arco = 9
+nivel = 3
+tags = ["matriz"]
+usa = [83]
+assinatura = "def resolver(m: list) -> int"
+enunciado = """
+Matriz quadrada. Some a diagonal principal e a secundária;
+o centro (se houver) conta uma vez só.
+"""
+exemplos = [
+  { entrada = [[[1, 2, 3], [4, 5, 6], [7, 8, 9]]] },
+  { entrada = [[[1, 2], [3, 4]]] },
+]
+testes = [
+  [[[5]]],
+  [[[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]]],
+  [[[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]]],
+  [[[0, 1, 2, 3, 4, 5], [6, 7, 8, 9, 10, 11], [12, 13, 14, 15, 16, 17], [18, 19, 20, 21, 22, 23], [24, 25, 26, 27, 28, 29], [30, 31, 32, 33, 34, 35]]],
+  [[[-1, 2], [3, -4]]],
+]
+dicas = [
+  "Principal: `m[i][i]`.",
+  "Secundária: `m[i][n - 1 - i]`.",
+  "Elas se cruzam quando `i == n - 1 - i`.",
+]
+referencias = [
+]
+conceito = """
+`n - 1 - i` é o "espelho" de i: aparece em inverter, girar e em qualquer simetria.
+"""

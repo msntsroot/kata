@@ -1,0 +1,35 @@
+id = 49
+slug = "apuracao"
+titulo = "Apuração"
+arco = 5
+nivel = 4
+tags = ["dicionários"]
+usa = [42]
+assinatura = "def resolver(votos: list) -> list"
+enunciado = """
+Retorne `[candidato, votos]` de cada um, do mais votado ao menos votado.
+Empate: ordem alfabética.
+"""
+exemplos = [
+  { entrada = [["ana", "bia", "ana", "caio"]] },
+  { entrada = [[]] },
+]
+testes = [
+  [["x"]],
+  [["b", "a"]],
+  [["c", "c", "b", "b", "a"]],
+  [["ze", "ze", "ze", "ze", "ze", "al", "al", "al", "al", "al", "mo", "mo", "mo", "mo", "mo", "mo"]],
+  [["d", "a", "c", "b", "a", "d"]],
+]
+dicas = [
+  "Conte primeiro.",
+  "`sorted` aceita `key=`.",
+  "`key=lambda par: (-par[1], par[0])`.",
+]
+referencias = [
+  { titulo = "Ordenação (HOWTO)", url = "https://docs.python.org/pt-br/3/howto/sorting.html" },
+]
+conceito = """
+`sorted(..., key=...)` ordena por qualquer critério. Uma tupla na key resolve desempates; o sinal de
+menos inverte a ordem de números sem precisar de `reverse=True` (que inverteria o desempate também).
+"""

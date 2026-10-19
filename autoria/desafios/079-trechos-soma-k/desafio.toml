@@ -1,0 +1,29 @@
+id = 79
+slug = "trechos-soma-k"
+titulo = "Trechos que somam k"
+arco = 8
+nivel = 7
+tags = ["prefixo", "dicionários"]
+usa = [45, 75]
+assinatura = "def resolver(nums: list, k: int) -> int"
+enunciado = """
+Quantos trechos contínuos (não vazios) somam exatamente `k`?
+Pode ter negativos. Até 100 mil números.
+"""
+exemplos = [
+  { entrada = [[1, 1, 1], 2] },
+  { entrada = [[1, 2, 3], 3] },
+]
+dicas = [
+  "Soma de i a j = `p[j+1] - p[i]` (dia 75). Você quer que isso seja k.",
+  "Para cada prefixo atual `p`, quantos prefixos anteriores valem `p - k`?",
+  "Um dicionário `prefixo → quantas vezes já apareceu`, começando com `{0: 1}` (como no dia 45).",
+]
+referencias = [
+]
+conceito = """
+Somas de prefixo + "o parceiro que eu preciso já apareceu?" do two-sum. Duas ideias antigas
+combinadas resolvem em O(n) um problema que parece pedir O(n²).
+"""
+[criterios]
+tempo = 4

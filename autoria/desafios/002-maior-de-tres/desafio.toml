@@ -1,0 +1,32 @@
+id = 2
+slug = "maior-de-tres"
+titulo = "O maior de três"
+arco = 1
+nivel = 1
+tags = ["condicional", "comparação"]
+usa = []
+assinatura = "def resolver(a: int, b: int, c: int) -> int"
+enunciado = """
+Retorne o maior entre `a`, `b` e `c`.
+Sem usar `max`.
+"""
+exemplos = [
+  { entrada = [3, 9, 2], saida = 9 },
+  { entrada = [5, 5, 1], saida = 5 },
+]
+testes = [[1, 2, 3], [3, 2, 1], [-1, -5, -3], [0, 0, 0], [7, 7, 8], [100, -100, 50], [-2, -2, -9]]
+dicas = [
+  "Guarde um candidato e desafie ele com os outros.",
+  "Comece com `maior = a`. Se `b` for maior que ele, troque.",
+  "Repita a troca para `c` e retorne `maior`.",
+]
+referencias = [
+  { titulo = "if / elif / else (tutorial Python)", url = "https://docs.python.org/pt-br/3/tutorial/controlflow.html#if-statements" },
+]
+conceito = """
+Manter um "melhor até agora" e compará-lo com cada novo valor é a ideia por trás
+de quase todo algoritmo de máximo e mínimo. Com três valores são duas comparações;
+com uma lista, vira um laço — logo, logo.
+"""
+[criterios]
+proibido = ["max", "sorted", "sort"]

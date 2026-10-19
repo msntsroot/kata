@@ -1,0 +1,29 @@
+id = 74
+slug = "janela-maxima"
+titulo = "A melhor janela"
+arco = 8
+nivel = 5
+tags = ["janela deslizante"]
+usa = [31]
+assinatura = "def resolver(nums: list, k: int) -> int"
+enunciado = """
+A maior soma de `k` elementos consecutivos (`1 <= k <= len(nums)`).
+Até 200 mil números, `k` grande.
+"""
+exemplos = [
+  { entrada = [[2, 1, 5, 1, 3, 2], 3] },
+  { entrada = [[-1, -2], 1] },
+]
+dicas = [
+  "Somar cada janela do zero refaz quase toda a conta.",
+  "Da janela [i, i+k) para [i+1, i+k+1), só um entra e um sai.",
+  "`soma += nums[i + k] - nums[i]`.",
+]
+referencias = [
+]
+conceito = """
+Janela deslizante: em vez de recalcular, atualize. O(n·k) vira O(n). Médias móveis em
+gráficos de ações e sensores funcionam assim.
+"""
+[criterios]
+tempo = 4

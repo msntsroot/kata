@@ -1,0 +1,40 @@
+id = 68
+slug = "raiz-inteira"
+titulo = "Raiz quadrada inteira"
+arco = 7
+nivel = 5
+tags = ["busca"]
+usa = [62, 67]
+assinatura = "def resolver(n: int) -> int"
+enunciado = """
+O maior inteiro `r` com `r * r <= n`. `n` vai até 10⁴⁰.
+Sem `sqrt`, `isqrt` nem `** 0.5` (floats erram com números assim).
+"""
+exemplos = [
+  { entrada = [16] },
+  { entrada = [17] },
+  { entrada = [0] },
+]
+testes = [
+  [1],
+  [2],
+  [24],
+  [25],
+  [1000000000000000000],
+  [10000000000000000000000000000000000000000],
+  [9999999999999999999999999999999999999999],
+  [99999999999999999999],
+]
+dicas = [
+  "A resposta está entre 0 e n. Busque nela.",
+  "Busca binária sobre a resposta: se `meio * meio <= n`, a raiz é pelo menos `meio`.",
+  "Mesmo esquema de \"guarde e continue\", só que agora para a direita.",
+]
+referencias = [
+]
+conceito = """
+Busca binária não é só para listas: serve para qualquer pergunta sim/não que muda uma vez só
+("meio² ≤ n?"). Busca na resposta: 10⁴⁰ possibilidades viram ~133 passos.
+"""
+[criterios]
+proibido = ["sqrt", "isqrt", "math", "pow", "decimal"]

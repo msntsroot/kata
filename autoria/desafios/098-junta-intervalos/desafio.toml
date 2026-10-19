@@ -1,0 +1,29 @@
+id = 98
+slug = "junta-intervalos"
+titulo = "Juntar intervalos"
+arco = 10
+nivel = 5
+tags = ["ordenação", "guloso"]
+usa = [91, 69]
+assinatura = "def resolver(intervalos: list) -> list"
+enunciado = """
+Junte os intervalos `[a, b]` que se sobrepõem ou se tocam.
+Retorne em ordem crescente.
+"""
+exemplos = [
+  { entrada = [[[1, 3], [2, 6], [8, 10], [15, 18]]] },
+  { entrada = [[[1, 4], [4, 5]]] },
+]
+dicas = [
+  "Ordenados pelo início, quem pode se juntar fica lado a lado.",
+  "Compare cada intervalo com o último da resposta.",
+  "Se `a <= ultimo[1]`, estenda: `ultimo[1] = max(ultimo[1], b)`. Senão, comece outro.",
+]
+referencias = [
+]
+conceito = """
+Ordenar primeiro transforma um problema de "todos contra todos" num de vizinhos.
+Calendários (horários livres) e bancos de dados (faixas de índices) fazem exatamente isto.
+"""
+[criterios]
+tempo = 4

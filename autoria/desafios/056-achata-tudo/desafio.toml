@@ -1,0 +1,37 @@
+id = 56
+slug = "achata-tudo"
+titulo = "Achatar tudo"
+arco = 6
+nivel = 5
+tags = ["recursão", "listas"]
+usa = [39]
+assinatura = "def resolver(lista: list) -> list"
+enunciado = """
+Listas dentro de listas, em qualquer profundidade: deixe tudo num nível só.
+`[1, [2, [3, [4]]], 5] → [1, 2, 3, 4, 5]`.
+"""
+exemplos = [
+  { entrada = [[1, [2, [3, [4]]], 5]] },
+  { entrada = [[]] },
+]
+testes = [
+  [[[[[]]]]],
+  [[1, 2, 3]],
+  [[[1], [[2]], [[[3]]]]],
+  [[[], [1, []], [[2, [3, [4, [5, [6]]]]]]]],
+  [["a", ["b", ["c"]]]],
+]
+dicas = [
+  "No dia 39, dois laços bastavam porque a profundidade era fixa.",
+  "Para cada item: se for lista, achate-a (recursão!) e junte; senão, adicione.",
+  "`isinstance(x, list)`.",
+]
+referencias = [
+  { titulo = "isinstance()", url = "https://docs.python.org/pt-br/3/library/functions.html#isinstance" },
+]
+conceito = """
+Estruturas recursivas (listas de listas, pastas com pastas, árvores) pedem soluções recursivas.
+Com laços você teria que gerenciar uma pilha na mão, que é o que a recursão faz por você.
+"""
+[criterios]
+recursivo = true

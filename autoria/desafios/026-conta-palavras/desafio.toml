@@ -1,0 +1,35 @@
+id = 26
+slug = "conta-palavras"
+titulo = "Contar palavras"
+arco = 3
+nivel = 3
+tags = ["strings"]
+usa = [24]
+assinatura = "def resolver(texto: str) -> int"
+enunciado = """
+Quantas palavras? Pode haver vários espaços seguidos, no começo ou no fim.
+"""
+exemplos = [
+  { entrada = ["oi tudo bem"] },
+  { entrada = ["   muito   espaço  "] },
+]
+testes = [
+  [""],
+  ["     "],
+  ["uma"],
+  [" a b c d e "],
+  ["fim."],
+  ["tab\te quebra\nde linha"],
+]
+dicas = [
+  "Uma palavra começa quando uma letra vem depois de um espaço.",
+  "Ou: existe um método de str que separa por qualquer espaço em branco.",
+  "`texto.split()` sem argumento ignora espaços repetidos.",
+]
+referencias = [
+  { titulo = "str.split", url = "https://docs.python.org/pt-br/3/library/stdtypes.html#str.split" },
+]
+conceito = """
+`split()` sem argumento e `split(" ")` são diferentes: o primeiro trata qualquer sequência de
+espaços em branco como um separador só. Conhecer a biblioteca padrão economiza laços.
+"""

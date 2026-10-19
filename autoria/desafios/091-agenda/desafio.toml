@@ -1,0 +1,30 @@
+id = 91
+slug = "agenda"
+titulo = "A agenda mais cheia"
+arco = 10
+nivel = 5
+tags = ["guloso", "ordenação"]
+usa = [69]
+assinatura = "def resolver(eventos: list) -> int"
+enunciado = """
+Cada evento é `[inicio, fim]`. Quantos eventos, no máximo, cabem sem sobrepor?
+Um pode começar exatamente quando o anterior termina.
+"""
+exemplos = [
+  { entrada = [[[1, 3], [2, 5], [4, 7], [6, 8]]] },
+  { entrada = [[]] },
+]
+dicas = [
+  "Qual evento escolher primeiro para sobrar mais espaço?",
+  "Não é o que começa antes nem o mais curto: é o que termina antes.",
+  "Ordene por fim; pegue cada evento que começa depois (ou quando) o último escolhido termina.",
+]
+referencias = [
+  { titulo = "Interval scheduling (Wikipedia)", url = "https://en.wikipedia.org/wiki/Interval_scheduling" },
+]
+conceito = """
+Guloso: fazer a melhor escolha local e nunca voltar atrás. Às vezes funciona (aqui é provado),
+às vezes não (dia 94). A arte está em saber qual critério guloso é o certo, e por quê.
+"""
+[criterios]
+tempo = 4

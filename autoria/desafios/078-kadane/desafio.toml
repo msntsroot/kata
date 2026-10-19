@@ -1,0 +1,29 @@
+id = 78
+slug = "kadane"
+titulo = "O melhor trecho"
+arco = 8
+nivel = 6
+tags = ["algoritmo", "programação dinâmica"]
+usa = [74]
+assinatura = "def resolver(nums: list) -> int"
+enunciado = """
+A maior soma de um trecho contínuo (não vazio) de `nums`. Até 200 mil números.
+"""
+exemplos = [
+  { entrada = [[-2, 1, -3, 4, -1, 2, 1, -5, 4]] },
+  { entrada = [[-3, -1, -2]] },
+]
+dicas = [
+  "Ande da esquerda para a direita mantendo a melhor soma que termina aqui.",
+  "Se a soma acumulada ficou negativa, ela só atrapalha o que vem depois: recomece.",
+  "`atual = max(x, atual + x)`; `melhor = max(melhor, atual)`.",
+]
+referencias = [
+  { titulo = "Algoritmo de Kadane (Wikipedia)", url = "https://en.wikipedia.org/wiki/Maximum_subarray_problem" },
+]
+conceito = """
+Kadane é programação dinâmica disfarçada: a melhor resposta terminando em i depende só da
+terminando em i−1. Guardar um resumo do passado em vez do passado inteiro é o assunto do arco 10.
+"""
+[criterios]
+tempo = 4

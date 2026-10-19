@@ -1,0 +1,31 @@
+id = 45
+slug = "dois-somam"
+titulo = "Dois que somam"
+arco = 5
+nivel = 5
+tags = ["dicionários", "clássico"]
+usa = [44]
+assinatura = "def resolver(nums: list, alvo: int) -> list"
+enunciado = """
+Ache `i < j` com `nums[i] + nums[j] == alvo`. Retorne `[i, j]` com o menor `j`
+possível (e, para esse `j`, o menor `i`). Nenhum par: `[]`. Numa passada.
+"""
+exemplos = [
+  { entrada = [[2, 7, 11, 15], 9] },
+  { entrada = [[3, 3], 6] },
+  { entrada = [[1, 2], 7] },
+]
+dicas = [
+  "Para cada número, você sabe exatamente qual parceiro precisa: `alvo - x`.",
+  "Guarde num dicionário os números já vistos e suas posições.",
+  "`if alvo - x in pos: return [pos[alvo - x], j]`; guarde só a primeira posição de cada valor.",
+]
+referencias = [
+  { titulo = "Two Sum (LeetCode)", url = "https://leetcode.com/problems/two-sum/" },
+]
+conceito = """
+Trocar "procurar o par" (dois laços, O(n²)) por "lembrar o que já vi" (um dicionário, O(n)) é
+o truque mais comum em entrevistas. Memória em troca de tempo.
+"""
+[criterios]
+tempo = 3

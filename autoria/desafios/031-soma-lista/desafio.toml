@@ -1,0 +1,29 @@
+id = 31
+slug = "soma-lista"
+titulo = "Somar a lista"
+arco = 4
+nivel = 2
+tags = ["listas", "laço"]
+usa = [11]
+assinatura = "def resolver(nums: list) -> int"
+enunciado = """
+A soma de todos os números de `nums`. Sem `sum`.
+"""
+exemplos = [
+  { entrada = [[1, 2, 3]] },
+  { entrada = [[]] },
+]
+dicas = [
+  "Acumulador, de novo.",
+  "`for x in nums:` percorre os valores direto.",
+  "`total += x`.",
+]
+referencias = [
+  { titulo = "Listas (estruturas de dados)", url = "https://docs.python.org/pt-br/3/tutorial/datastructures.html#more-on-lists" },
+]
+conceito = """
+`for x in lista` percorre os valores; `for i in range(len(lista))` percorre os índices.
+Prefira o primeiro: só use índices quando precisar da posição.
+"""
+[criterios]
+proibido = ["sum"]

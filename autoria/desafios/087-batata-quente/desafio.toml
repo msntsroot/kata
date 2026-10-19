@@ -1,0 +1,37 @@
+id = 87
+slug = "batata-quente"
+titulo = "Batata quente"
+arco = 9
+nivel = 5
+tags = ["fila", "revisão"]
+usa = [36]
+assinatura = "def resolver(n: int, k: int) -> list"
+enunciado = """
+`n` pessoas em roda (1..n). Contando a partir da 1, a `k`-ésima sai,
+e a contagem recomeça na seguinte. Retorne a ordem de saída.
+"""
+exemplos = [
+  { entrada = [5, 2] },
+  { entrada = [3, 1] },
+]
+testes = [
+  [1, 1],
+  [1, 5],
+  [7, 3],
+  [6, 10],
+  [10, 1],
+  [2000, 7],
+]
+dicas = [
+  "Uma fila: quem passa a batata vai para o fim.",
+  "`collections.deque` tem `popleft` e `append` rápidos.",
+  "Gire `k - 1` vezes (tira da frente, põe no fim) e remova o da frente.",
+]
+referencias = [
+  { titulo = "collections.deque", url = "https://docs.python.org/pt-br/3/library/collections.html#collections.deque" },
+  { titulo = "Problema de Josephus (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Problema_de_Josephus" },
+]
+conceito = """
+Fila: o primeiro a entrar é o primeiro a sair (FIFO). Girar uma fila é a roda do dia 36 em movimento.
+`list.pop(0)` é O(n); `deque.popleft()` é O(1).
+"""

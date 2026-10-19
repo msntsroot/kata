@@ -1,0 +1,30 @@
+id = 80
+slug = "agua-da-chuva"
+titulo = "Chefão: água da chuva"
+arco = 8
+nivel = 7
+tags = ["dois ponteiros", "chefão"]
+usa = [71, 75]
+assinatura = "def resolver(alturas: list) -> int"
+enunciado = """
+`alturas` são colunas de largura 1. Depois da chuva, quanta água fica presa entre elas?
+Até 200 mil colunas.
+"""
+exemplos = [
+  { entrada = [[0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]] },
+  { entrada = [[4, 2, 0, 3, 2, 5]] },
+]
+dicas = [
+  "Sobre cada coluna, a água sobe até o menor entre o mais alto à esquerda e o mais alto à direita.",
+  "Pré-calcule \"maior à esquerda\" e \"maior à direita\" para cada posição (prefixo de máximos).",
+  "Ou dois ponteiros: avance o lado com o teto menor, pois ele é quem limita.",
+]
+referencias = [
+  { titulo = "Trapping Rain Water (LeetCode)", url = "https://leetcode.com/problems/trapping-rain-water/" },
+]
+conceito = """
+A versão com dois vetores de máximos é a ideia de prefixo do dia 75 com `max` no lugar de `+`.
+A de dois ponteiros chega no mesmo resultado com memória O(1). Ter as duas na cabeça é o que este arco ensinou.
+"""
+[criterios]
+tempo = 4

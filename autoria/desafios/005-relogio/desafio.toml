@@ -1,0 +1,37 @@
+id = 5
+slug = "relogio"
+titulo = "Relógio"
+arco = 1
+nivel = 2
+tags = ["divisão inteira", "resto", "formatação"]
+usa = [1]
+assinatura = "def resolver(segundos: int) -> str"
+enunciado = """
+Converta `segundos` para `"hh:mm:ss"`, sempre com dois dígitos.
+"""
+exemplos = [
+  { entrada = [3725] },
+  { entrada = [59] },
+]
+testes = [
+  [0],
+  [60],
+  [3600],
+  [86399],
+  [45296],
+  [7322],
+  [600],
+  [36000],
+]
+dicas = [
+  "Uma hora tem 3600 segundos, um minuto tem 60.",
+  "`//` dá a divisão inteira e `%` o que sobra.",
+  "`f\"{h:02d}\"` escreve h com dois dígitos.",
+]
+referencias = [
+  { titulo = "f-strings e formatação", url = "https://docs.python.org/pt-br/3/tutorial/inputoutput.html#formatted-string-literals" },
+]
+conceito = """
+O par `//` e `%` decompõe um número em unidades: horas, minutos, segundos;
+ou dígitos (base 10); ou bits (base 2). `divmod(a, b)` devolve os dois de uma vez.
+"""

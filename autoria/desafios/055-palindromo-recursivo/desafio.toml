@@ -1,0 +1,40 @@
+id = 55
+slug = "palindromo-recursivo"
+titulo = "Palíndromo recursivo"
+arco = 6
+nivel = 4
+tags = ["recursão", "strings"]
+usa = [23, 51]
+assinatura = "def resolver(s: str) -> bool"
+enunciado = """
+`s` é palíndromo? Com recursão: compare as pontas e resolva o meio.
+Sem inverter a string.
+"""
+exemplos = [
+  { entrada = ["arara"] },
+  { entrada = ["kata"] },
+  { entrada = [""] },
+]
+testes = [
+  ["a"],
+  ["aa"],
+  ["ab"],
+  ["abba"],
+  ["abcba"],
+  ["abccbx"],
+  ["socorrammesubinoonibusemmarrocos"],
+]
+dicas = [
+  "Se as pontas forem diferentes, já sabe a resposta.",
+  "Se forem iguais, a resposta é a do miolo: `s[1:-1]`.",
+  "Caso base: string com 0 ou 1 letra.",
+]
+referencias = [
+]
+conceito = """
+Cada chamada tira duas letras e repassa o miolo: o problema diminui até o caso base.
+Essa é a pergunta de todo problema recursivo: como faço o problema ficar menor?
+"""
+[criterios]
+recursivo = true
+proibido = ["reversed", "reverse"]

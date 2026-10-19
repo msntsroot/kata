@@ -1,0 +1,37 @@
+id = 52
+slug = "soma-digitos-recursiva"
+titulo = "Dígitos, recursivamente"
+arco = 6
+nivel = 3
+tags = ["recursão"]
+usa = [14, 51]
+assinatura = "def resolver(n: int) -> int"
+enunciado = """
+Soma dos dígitos de `n >= 0`, com recursão e sem texto.
+"""
+exemplos = [
+  { entrada = [1234] },
+  { entrada = [0] },
+]
+testes = [
+  [9],
+  [10],
+  [999],
+  [987654321],
+  [100000000000000000000000000000000000000000000000000],
+  [55],
+]
+dicas = [
+  "A soma dos dígitos de 1234 é 4 + (soma dos dígitos de 123).",
+  "Caso base: um número de um dígito (ou zero).",
+  "`n % 10 + resolver(n // 10)`.",
+]
+referencias = [
+]
+conceito = """
+Qualquer laço pode virar recursão e vice-versa. O laço do dia 14 tinha um estado que mudava (`n //= 10`);
+aqui, esse estado é o argumento da próxima chamada.
+"""
+[criterios]
+recursivo = true
+proibido = ["str", "sum", "map"]

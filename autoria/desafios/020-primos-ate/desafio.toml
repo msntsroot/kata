@@ -1,0 +1,37 @@
+id = 20
+slug = "primos-ate"
+titulo = "Chefão: primos até n"
+arco = 2
+nivel = 5
+tags = ["laço", "listas", "chefão"]
+usa = [15, 17]
+assinatura = "def resolver(n: int) -> list"
+enunciado = """
+Todos os primos de 2 até `n`, em ordem.
+"""
+exemplos = [
+  { entrada = [10] },
+  { entrada = [2] },
+  { entrada = [1] },
+]
+testes = [
+  [30],
+  [100],
+  [0],
+  [3],
+  [1000],
+  [20000],
+]
+dicas = [
+  "Você tem um teste de primo e sabe montar listas.",
+  "Uma função `eh_primo(k)` e um laço de 2 até n.",
+  "Só testar divisores até √k é o que deixa n = 20000 rápido.",
+]
+referencias = [
+]
+conceito = """
+Juntar peças pequenas (`eh_primo`) em algo maior é o que você fez a semana toda.
+No arco 7 tem um jeito bem mais rápido: o Crivo de Eratóstenes.
+"""
+[criterios]
+tempo = 4

@@ -1,0 +1,41 @@
+id = 4
+slug = "ano-bissexto"
+titulo = "Ano bissexto"
+arco = 1
+nivel = 2
+tags = ["condicional", "resto"]
+usa = [1]
+assinatura = "def resolver(ano: int) -> bool"
+enunciado = """
+Bissexto: divisível por 4,
+exceto os divisíveis por 100,
+que voltam a ser se divisíveis por 400.
+"""
+exemplos = [
+  { entrada = [2024] },
+  { entrada = [1900] },
+  { entrada = [2000] },
+]
+testes = [
+  [2023],
+  [2100],
+  [2400],
+  [1600],
+  [1700],
+  [4],
+  [1],
+  [2026],
+  [2028],
+]
+dicas = [
+  "São três regras; a ordem em que você testa muda tudo.",
+  "Comece pela regra mais específica: 400, depois 100, depois 4.",
+  "`ano % 400 == 0` → True. Senão, `ano % 100 == 0` → False. Senão, olhe o 4.",
+]
+referencias = [
+  { titulo = "Ano bissexto (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Ano_bissexto" },
+]
+conceito = """
+Regras com exceções se resolvem testando da mais específica para a mais geral.
+Dá pra escrever numa linha só: `ano % 4 == 0 and (ano % 100 != 0 or ano % 400 == 0)`.
+"""

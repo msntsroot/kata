@@ -1,0 +1,32 @@
+id = 70
+slug = "inversoes"
+titulo = "Chefão: inversões"
+arco = 7
+nivel = 7
+tags = ["ordenação", "recursão", "chefão"]
+usa = [66]
+assinatura = "def resolver(nums: list) -> int"
+enunciado = """
+Quantos pares `i < j` têm `nums[i] > nums[j]`? Até 100 mil números.
+Dois laços não terminam a tempo.
+"""
+exemplos = [
+  { entrada = [[2, 4, 1, 3, 5]] },
+  { entrada = [[1, 2, 3]] },
+  { entrada = [[3, 2, 1]] },
+]
+dicas = [
+  "O merge sort já compara tudo de que você precisa.",
+  "Durante a mescla, quando um elemento da direita sai antes, ele é menor que todos que restam na esquerda.",
+  "Some `len(esq) - i` toda vez que pegar de `dir`. Total = inversões da esq + da dir + da mescla.",
+]
+referencias = [
+  { titulo = "Inversão (Wikipedia)", url = "https://en.wikipedia.org/wiki/Inversion_(discrete_mathematics)" },
+]
+conceito = """
+Pegar um algoritmo conhecido e "pendurar" uma conta nele é uma técnica poderosa. Inversões medem
+o quão desordenada uma lista está: dá para comparar rankings ("quão parecidos são meus gostos e os seus?").
+"""
+[criterios]
+proibido = ["sorted", "sort", "heapq", "bisect"]
+tempo = 5

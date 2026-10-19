@@ -1,0 +1,30 @@
+id = 88
+slug = "ilhas"
+titulo = "Ilhas"
+arco = 9
+nivel = 6
+tags = ["grade", "dfs"]
+usa = [81, 44]
+assinatura = "def resolver(mapa: list) -> int"
+enunciado = """
+`mapa` é uma lista de strings com `"1"` (terra) e `"0"` (água).
+Terra ligada na horizontal ou vertical forma uma ilha. Quantas ilhas? Até 150×150.
+"""
+exemplos = [
+  { entrada = [["11000", "11000", "00100", "00011"]] },
+  { entrada = [["111", "010", "111"]] },
+]
+dicas = [
+  "Achou terra que ainda não visitou? É uma ilha nova: agora visite a ilha inteira.",
+  "Visitar a ilha = visitar os 4 vizinhos que são terra, e os vizinhos deles...",
+  "Recursão estoura numa ilha de 150×150. Use uma pilha (dia 81) e um `set` de visitados.",
+]
+referencias = [
+  { titulo = "Busca em profundidade (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Busca_em_profundidade" },
+]
+conceito = """
+Busca em profundidade (DFS): uma grade é um grafo onde cada célula liga nos vizinhos.
+Pilha explícita no lugar de recursão evita o limite de ~1000 chamadas do Python.
+"""
+[criterios]
+tempo = 5

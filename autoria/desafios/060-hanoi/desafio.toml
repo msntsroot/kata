@@ -1,0 +1,38 @@
+id = 60
+slug = "hanoi"
+titulo = "Chefão: Torre de Hanói"
+arco = 6
+nivel = 6
+tags = ["recursão", "chefão"]
+usa = [55, 59]
+assinatura = "def resolver(n: int) -> list"
+enunciado = """
+`n` discos no pino 1, maiores embaixo. Leve todos ao pino 3, um disco por vez,
+nunca um maior sobre um menor. Retorne os movimentos `[de, para]`, com o mínimo deles.
+"""
+exemplos = [
+  { entrada = [1] },
+  { entrada = [2] },
+]
+testes = [
+  [0],
+  [3],
+  [4],
+  [5],
+  [10],
+  [12],
+]
+dicas = [
+  "Para mover n discos, você precisa tirar n−1 do caminho do maior.",
+  "Mova n−1 para o pino auxiliar, mova o maior, mova os n−1 de volta para cima dele.",
+  "`hanoi(n, origem, destino, aux)` chamando `hanoi(n-1, origem, aux, destino)`.",
+]
+referencias = [
+  { titulo = "Torre de Hanói (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Torre_de_Han%C3%B3i" },
+]
+conceito = """
+Você não precisa imaginar todos os movimentos: confie que a chamada menor funciona e só cuide
+do passo atual. Esse "salto de fé" é a habilidade central da recursão. São 2ⁿ − 1 movimentos.
+"""
+[criterios]
+recursivo = true

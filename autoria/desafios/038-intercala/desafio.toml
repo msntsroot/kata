@@ -1,0 +1,35 @@
+id = 38
+slug = "intercala"
+titulo = "Intercalar"
+arco = 4
+nivel = 3
+tags = ["listas"]
+usa = [31]
+assinatura = "def resolver(a: list, b: list) -> list"
+enunciado = """
+Alterne os elementos: `a[0], b[0], a[1], b[1], ...`
+O que sobrar da maior vai para o fim.
+"""
+exemplos = [
+  { entrada = [[1, 2, 3], ["a", "b", "c"]] },
+  { entrada = [[1], [2, 3, 4]] },
+]
+testes = [
+  [[], []],
+  [[1, 2], []],
+  [[], [1, 2]],
+  [[1, 3, 5, 7], [2, 4]],
+  [[0, 1, 2, 3, 4], [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]],
+]
+dicas = [
+  "Ande com um índice até o fim da menor.",
+  "`for i in range(min(len(a), len(b)))`.",
+  "Depois, `a[n:] + b[n:]` (uma delas vai estar vazia).",
+]
+referencias = [
+  { titulo = "zip()", url = "https://docs.python.org/pt-br/3/library/functions.html#zip" },
+]
+conceito = """
+`zip(a, b)` caminha pelas duas listas juntas e para na menor. A parte de "o que sobrou" é tão
+importante quanto o laço: é a mesma estrutura do chefão deste arco.
+"""

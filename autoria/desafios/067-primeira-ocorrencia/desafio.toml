@@ -1,0 +1,30 @@
+id = 67
+slug = "primeira-ocorrencia"
+titulo = "A primeira de muitas"
+arco = 7
+nivel = 5
+tags = ["busca", "revisão"]
+usa = [62]
+assinatura = "def resolver(nums: list, x: int) -> int"
+enunciado = """
+`nums` está em ordem crescente e pode ter repetidos (até 1 milhão).
+Índice da primeira ocorrência de `x`, ou `-1`. Em O(log n).
+"""
+exemplos = [
+  { entrada = [[1, 2, 2, 2, 3], 2] },
+  { entrada = [[1, 3], 2] },
+]
+dicas = [
+  "A busca binária comum para em qualquer ocorrência. Você quer a da esquerda.",
+  "Quando achar, guarde a resposta e continue procurando à esquerda.",
+  "Achou em `meio`: `resp = meio; fim = meio - 1`.",
+]
+referencias = [
+]
+conceito = """
+"Achou, mas continua procurando" transforma a busca binária em busca pela fronteira: o primeiro índice
+onde uma condição vira verdadeira. Dá para responder "quantos são < x?" do mesmo jeito.
+"""
+[criterios]
+proibido = ["index", "bisect", "find", "count"]
+tempo = 3

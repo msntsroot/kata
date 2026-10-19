@@ -1,0 +1,37 @@
+id = 41
+slug = "frequencia"
+titulo = "Frequência de letras"
+arco = 5
+nivel = 3
+tags = ["dicionários"]
+usa = [29]
+assinatura = "def resolver(texto: str) -> dict"
+enunciado = """
+Um dicionário `letra → quantas vezes aparece`. Só letras, em minúsculas.
+"""
+exemplos = [
+  { entrada = ["banana"] },
+  { entrada = ["Oi, oi!"] },
+]
+testes = [
+  [""],
+  ["aaa"],
+  ["Python e legal"],
+  ["123"],
+  ["AbCabc"],
+  ["o rato roeu a roupa do rei de roma"],
+]
+dicas = [
+  "Comece com `{}` e vá somando.",
+  "`c.isalpha()` diz se é letra.",
+  "`freq[c] = freq.get(c, 0) + 1`.",
+]
+referencias = [
+  { titulo = "Dicionários", url = "https://docs.python.org/pt-br/3/tutorial/datastructures.html#dictionaries" },
+]
+conceito = """
+Dicionário: acesso por chave em tempo constante. Contar com `get(c, 0) + 1` é um padrão
+que você vai repetir dezenas de vezes (a biblioteca tem `collections.Counter`, que faz isso por você).
+"""
+[criterios]
+proibido = ["Counter", "collections"]

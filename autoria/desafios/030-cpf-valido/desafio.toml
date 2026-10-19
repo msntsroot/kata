@@ -1,0 +1,42 @@
+id = 30
+slug = "cpf-valido"
+titulo = "Chefão: CPF válido"
+arco = 3
+nivel = 5
+tags = ["strings", "laço", "chefão"]
+usa = [14, 1]
+assinatura = "def resolver(cpf: str) -> bool"
+enunciado = """
+`cpf` vem como `"000.000.000-00"` ou só dígitos. Valide os dois dígitos verificadores.
+1º: some os 9 primeiros × pesos 10..2; `r = soma * 10 % 11`; se `r == 10`, `r = 0`.
+2º: igual, com os 10 primeiros × pesos 11..2. Todos os dígitos iguais é inválido.
+"""
+exemplos = [
+  { entrada = ["529.982.247-25"] },
+  { entrada = ["529.982.247-26"] },
+  { entrada = ["111.111.111-11"] },
+]
+testes = [
+  ["52998224725"],
+  ["123.456.789-09"],
+  ["123.456.789-00"],
+  ["000.000.000-00"],
+  ["1234567890"],
+  ["168.995.350-09"],
+  ["168.995.350-90"],
+  ["abc"],
+  ["935.411.347-80"],
+  ["935.411.347-81"],
+]
+dicas = [
+  "Primeiro limpe: fique só com os dígitos, e confira se são 11.",
+  "Uma função `digito(numeros, peso_inicial)` serve para os dois verificadores.",
+  "`sum(int(d) * p for d, p in zip(digitos, range(peso, 1, -1)))`.",
+]
+referencias = [
+  { titulo = "Cadastro de Pessoas Físicas (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Cadastro_de_pessoas_f%C3%ADsicas" },
+]
+conceito = """
+Dígitos verificadores pegam erros de digitação: trocar ou errar um dígito muda o resultado.
+Código de barras, ISBN e cartão de crédito (Luhn) usam a mesma ideia de soma ponderada com resto.
+"""

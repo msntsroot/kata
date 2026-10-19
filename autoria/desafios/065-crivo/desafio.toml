@@ -1,0 +1,37 @@
+id = 65
+slug = "crivo"
+titulo = "Crivo de Eratóstenes"
+arco = 7
+nivel = 5
+tags = ["algoritmo", "listas"]
+usa = [20]
+assinatura = "def resolver(n: int) -> int"
+enunciado = """
+Quantos primos existem até `n`? Com `n` até 2 milhões, em poucos segundos.
+"""
+exemplos = [
+  { entrada = [10] },
+  { entrada = [1] },
+]
+testes = [
+  [2],
+  [100],
+  [1000],
+  [100000],
+  [2000000],
+  [999983],
+]
+dicas = [
+  "Testar cada número como no dia 20 é lento demais aqui.",
+  "Crie `[True] * (n + 1)` e risque os múltiplos de cada primo.",
+  "Para cada `p` ainda marcado, risque `p*p, p*p + p, ...`. Pare quando `p * p > n`.",
+]
+referencias = [
+  { titulo = "Crivo de Eratóstenes (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Crivo_de_Erat%C3%B3stenes" },
+]
+conceito = """
+Em vez de perguntar "este é primo?" para cada número, elimine os que com certeza não são.
+É O(n log log n), quase linear. Começar em `p*p` funciona porque os múltiplos menores já foram riscados.
+"""
+[criterios]
+tempo = 4

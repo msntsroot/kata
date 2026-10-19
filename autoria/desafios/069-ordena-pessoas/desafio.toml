@@ -1,0 +1,35 @@
+id = 69
+slug = "ordena-pessoas"
+titulo = "Fila por idade"
+arco = 7
+nivel = 4
+tags = ["ordenação"]
+usa = [49]
+assinatura = "def resolver(pessoas: list) -> list"
+enunciado = """
+`pessoas` é uma lista de `[nome, idade]`. Ordene da mais velha para a mais nova;
+mesma idade, por nome. Retorne só os nomes.
+"""
+exemplos = [
+  { entrada = [[["ana", 30], ["bia", 25], ["caio", 30]]] },
+  { entrada = [[]] },
+]
+testes = [
+  [[["z", 1]]],
+  [[["b", 2], ["a", 2], ["c", 2]]],
+  [[["x", 10], ["y", 20], ["z", 30]]],
+  [[["eva", 99], ["al", 0], ["bo", 99], ["cy", 50]]],
+  [[["m", 5], ["l", 5], ["n", 6]]],
+]
+dicas = [
+  "Agora pode `sorted`: o que importa é a chave.",
+  "A chave pode ser uma tupla.",
+  "`key=lambda p: (-p[1], p[0])`.",
+]
+referencias = [
+  { titulo = "Ordenação (HOWTO)", url = "https://docs.python.org/pt-br/3/howto/sorting.html" },
+]
+conceito = """
+Você implementou três ordenações; na prática, use `sorted` e invista no critério.
+O sort do Python é estável: itens empatados mantêm a ordem original, o que permite ordenar em etapas.
+"""

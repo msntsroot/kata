@@ -1,0 +1,39 @@
+id = 29
+slug = "anagrama"
+titulo = "Anagrama"
+arco = 3
+nivel = 4
+tags = ["strings", "contagem"]
+usa = [21]
+assinatura = "def resolver(a: str, b: str) -> bool"
+enunciado = """
+`a` e `b` têm exatamente as mesmas letras, nas mesmas quantidades?
+Ignore espaços e maiúsculas.
+"""
+exemplos = [
+  { entrada = ["roma", "amor"] },
+  { entrada = ["Iracema", "America"] },
+  { entrada = ["kata", "taco"] },
+]
+testes = [
+  ["", ""],
+  ["a", "a"],
+  ["aab", "abb"],
+  ["listen", "silent"],
+  ["dormitory", "dirty room"],
+  ["abc", "abcd"],
+  ["aa", "a"],
+]
+dicas = [
+  "Hoje não vale ordenar: pense em contar.",
+  "Sem ordenar: conte as letras de `a` e desconte as de `b`.",
+  "Se no fim todas as contagens forem zero, é anagrama.",
+]
+referencias = [
+]
+conceito = """
+Contar ocorrências é mais rápido que ordenar quando há muitas letras: é uma passada só.
+No arco 5 você vai fazer isso com dicionários.
+"""
+[criterios]
+proibido = ["sorted", "sort", "Counter", "collections"]

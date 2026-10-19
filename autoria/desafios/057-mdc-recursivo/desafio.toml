@@ -1,0 +1,37 @@
+id = 57
+slug = "mdc-recursivo"
+titulo = "Euclides recursivo"
+arco = 6
+nivel = 3
+tags = ["recursão", "revisão"]
+usa = [18]
+assinatura = "def resolver(a: int, b: int) -> int"
+enunciado = """
+O MDC do dia 18, em recursão: `mdc(a, 0) = a`, `mdc(a, b) = mdc(b, a % b)`.
+"""
+exemplos = [
+  { entrada = [12, 18] },
+  { entrada = [0, 9] },
+]
+testes = [
+  [9, 0],
+  [100, 75],
+  [1071, 462],
+  [1099511627776, 3656158440062976],
+  [17, 5],
+  [123456, 7890],
+]
+dicas = [
+  "A definição já é recursiva.",
+  "Caso base: `b == 0`.",
+  "`return resolver(b, a % b)`.",
+]
+referencias = [
+]
+conceito = """
+Quando a definição matemática é recursiva, a recursão fica quase idêntica a ela. Compare com o
+`while` do dia 18: o estado `(a, b)` que mudava no laço agora são os argumentos.
+"""
+[criterios]
+recursivo = true
+proibido = ["gcd", "math"]

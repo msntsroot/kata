@@ -1,0 +1,34 @@
+id = 46
+slug = "agrupa-anagramas"
+titulo = "Agrupar anagramas"
+arco = 5
+nivel = 5
+tags = ["dicionários", "strings"]
+usa = [29, 41]
+assinatura = "def resolver(palavras: list) -> list"
+enunciado = """
+Agrupe as palavras que são anagramas entre si.
+Cada grupo em ordem alfabética; os grupos ordenados pela primeira palavra.
+"""
+exemplos = [
+  { entrada = [["amor", "roma", "ramo", "gato", "toga", "sol"]] },
+  { entrada = [[]] },
+]
+testes = [
+  [["a"]],
+  [["ab", "ba", "ab"]],
+  [["abc", "def", "ghi"]],
+  [["listen", "silent", "enlist", "google", "gogole"]],
+  [["", ""]],
+]
+dicas = [
+  "Duas palavras são anagramas se têm a mesma \"assinatura\".",
+  "Uma assinatura simples: as letras ordenadas. `\"\".join(sorted(p))`.",
+  "Um dicionário `assinatura → lista de palavras`; depois ordene.",
+]
+referencias = [
+]
+conceito = """
+Escolher uma chave canônica (a forma normalizada de algo) e agrupar por ela num dicionário
+resolve uma família inteira de problemas: agrupar arquivos iguais, e-mails iguais, etc.
+"""

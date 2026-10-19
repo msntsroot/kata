@@ -1,0 +1,39 @@
+id = 53
+slug = "potencia-rapida"
+titulo = "Potência rápida"
+arco = 6
+nivel = 5
+tags = ["recursão", "algoritmo"]
+usa = [51]
+assinatura = "def resolver(b: int, e: int, m: int) -> int"
+enunciado = """
+`(b ^ e) % m`, com `e` até um bilhão. Sem `**` em `b ** e`, sem `pow`.
+Multiplicar `e` vezes não termina a tempo.
+"""
+exemplos = [
+  { entrada = [2, 10, 1000] },
+  { entrada = [3, 0, 7] },
+]
+testes = [
+  [2, 1, 5],
+  [7, 1000000000, 1000000007],
+  [123456789, 987654321, 998244353],
+  [10, 18, 1000000000],
+  [5, 3, 1],
+  [2, 999999999, 13],
+]
+dicas = [
+  "`b^10 = (b^5)²`. E `b^5 = b × b^4`.",
+  "Expoente par: calcule a metade uma vez e eleve ao quadrado. Ímpar: tire um `b`.",
+  "Faça `% m` depois de cada multiplicação para os números não explodirem.",
+]
+referencias = [
+  { titulo = "Exponenciação por quadrados (Wikipedia)", url = "https://en.wikipedia.org/wiki/Exponentiation_by_squaring" },
+]
+conceito = """
+Dividir o expoente por 2 a cada passo: um bilhão vira ~30 passos. É O(log e).
+"Dividir o problema ao meio" é a mesma ideia da busca binária e do merge sort (arco 7). Criptografia (RSA) depende disto.
+"""
+[criterios]
+recursivo = true
+proibido = ["pow"]

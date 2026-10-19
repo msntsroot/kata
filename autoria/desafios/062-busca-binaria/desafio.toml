@@ -1,0 +1,34 @@
+id = 62
+slug = "busca-binaria"
+titulo = "Busca binária"
+arco = 7
+nivel = 4
+tags = ["busca", "algoritmo"]
+usa = [61]
+assinatura = "def resolver(nums: list, consultas: list) -> list"
+enunciado = """
+`nums` está em ordem crescente, sem repetidos. Para cada consulta, o índice dela em `nums` ou `-1`.
+São até 100 mil números e 100 mil consultas.
+"""
+exemplos = [
+  { entrada = [[1, 3, 5, 7, 9], [7, 4]] },
+]
+testes = [
+  [[2, 4, 6, 8, 10, 12], [2, 12, 7, 6, 13]],
+  [[-9, -3, 0], [-9, 0, -3, 1]],
+]
+dicas = [
+  "Olhe o meio. Se o que você procura é maior, ele só pode estar à direita.",
+  "Mantenha `ini` e `fim`; a cada passo, descarte metade.",
+  "`while ini <= fim: meio = (ini + fim) // 2` e ajuste `ini = meio + 1` ou `fim = meio - 1`.",
+]
+referencias = [
+  { titulo = "Pesquisa binária (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Pesquisa_bin%C3%A1ria" },
+]
+conceito = """
+Cada passo descarta metade: 100 mil itens viram 17 passos. É O(log n).
+Busca linear com 100 mil consultas seriam 10 bilhões de passos; a binária, menos de 2 milhões.
+"""
+[criterios]
+proibido = ["index", "bisect", "dict", "set", "find"]
+tempo = 4

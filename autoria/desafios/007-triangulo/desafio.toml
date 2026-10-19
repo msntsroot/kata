@@ -1,0 +1,40 @@
+id = 7
+slug = "triangulo"
+titulo = "Que triângulo?"
+arco = 1
+nivel = 3
+tags = ["condicional", "revisão"]
+usa = [2]
+assinatura = "def resolver(a: int, b: int, c: int) -> str"
+enunciado = """
+Lados `a`, `b`, `c`. Retorne `"invalido"`, `"equilatero"`, `"isosceles"` ou `"escaleno"`.
+Válido: cada lado é menor que a soma dos outros dois.
+"""
+exemplos = [
+  { entrada = [3, 3, 3] },
+  { entrada = [3, 4, 5] },
+  { entrada = [1, 2, 3] },
+]
+testes = [
+  [2, 2, 3],
+  [2, 3, 2],
+  [3, 2, 2],
+  [10, 1, 1],
+  [0, 0, 0],
+  [5, 5, 9],
+  [5, 5, 10],
+  [7, 8, 9],
+  [1, 1, 1],
+]
+dicas = [
+  "Primeiro decida se é triângulo. Só depois classifique.",
+  "Três comparações de validade: `a < b + c`, e as outras duas.",
+  "Equilátero: `a == b == c`. Isósceles: algum par igual. Senão, escaleno.",
+]
+referencias = [
+  { titulo = "Desigualdade triangular (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Desigualdade_triangular" },
+]
+conceito = """
+Validar a entrada antes de classificar evita casos absurdos (lados 1, 1, 10 viram "isósceles").
+Em Python, `a == b == c` encadeia comparações: é `a == b and b == c`.
+"""

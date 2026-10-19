@@ -1,0 +1,30 @@
+id = 100
+slug = "maior-crescente"
+titulo = "Chefão final: sempre subindo"
+arco = 10
+nivel = 9
+tags = ["programação dinâmica", "busca", "chefão"]
+usa = [67, 92, 96]
+assinatura = "def resolver(nums: list) -> int"
+enunciado = """
+O tamanho da maior subsequência estritamente crescente (não precisa ser contígua).
+`[10, 9, 2, 5, 3, 7, 101, 18]` → 4. Até 3000 números.
+"""
+exemplos = [
+  { entrada = [[10, 9, 2, 5, 3, 7, 101, 18]] },
+  { entrada = [[7, 7, 7]] },
+]
+dicas = [
+  "Para cada posição i: qual a maior subsequência crescente que termina em `nums[i]`?",
+  "`fim[i] = 1 + max(fim[j])` para os `j < i` com `nums[j] < nums[i]`. Isso é O(n²), e serve aqui.",
+  "Desafio extra: guarde o menor final possível para cada tamanho e use busca binária (dia 67): O(n log n).",
+]
+referencias = [
+  { titulo = "Longest increasing subsequence (Wikipedia)", url = "https://en.wikipedia.org/wiki/Longest_increasing_subsequence" },
+]
+conceito = """
+O último chefão junta tudo: a DP do arco 10 e, na versão rápida, a busca binária pela fronteira do dia 67.
+Cem dias atrás era par ou ímpar. Volte no caderno e veja o caminho.
+"""
+[criterios]
+tempo = 5

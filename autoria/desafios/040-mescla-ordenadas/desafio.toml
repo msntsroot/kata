@@ -1,0 +1,31 @@
+id = 40
+slug = "mescla-ordenadas"
+titulo = "Chefão: mesclar ordenadas"
+arco = 4
+nivel = 5
+tags = ["listas", "dois ponteiros", "chefão"]
+usa = [38]
+assinatura = "def resolver(a: list, b: list) -> list"
+enunciado = """
+`a` e `b` já estão em ordem crescente. Retorne todas juntas, em ordem,
+sem ordenar de novo: uma passada só.
+"""
+exemplos = [
+  { entrada = [[1, 4, 7], [2, 3, 9]] },
+  { entrada = [[], [1, 2]] },
+]
+dicas = [
+  "Olhe só a cabeça de cada lista: qual é a menor?",
+  "Dois índices, `i` e `j`. Pegue o menor de `a[i]` e `b[j]` e avance só aquele índice.",
+  "Quando uma acabar, junte o resto da outra (como no intercalar).",
+]
+referencias = [
+  { titulo = "Merge sort (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Merge_sort" },
+]
+conceito = """
+Dois ponteiros andando em duas listas é a base do merge sort (arco 7) e de muita coisa no arco 8.
+É O(n + m): cada elemento é olhado uma vez. Ordenar tudo de novo seria O((n+m) log(n+m)).
+"""
+[criterios]
+proibido = ["sorted", "sort", "heapq", "merge"]
+tempo = 3

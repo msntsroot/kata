@@ -1,0 +1,34 @@
+id = 42
+slug = "palavra-mais-frequente"
+titulo = "A palavra que mais aparece"
+arco = 5
+nivel = 4
+tags = ["dicionários"]
+usa = [26, 41]
+assinatura = "def resolver(texto: str) -> str"
+enunciado = """
+A palavra mais frequente (em minúsculas, separadas por espaço).
+Empate: a que vem primeiro em ordem alfabética.
+"""
+exemplos = [
+  { entrada = ["o gato e o rato"] },
+  { entrada = ["b a b a"] },
+]
+testes = [
+  ["kata"],
+  ["Um um UM dois"],
+  ["z y x"],
+  ["a b c a b c a"],
+  ["casa casa carro carro bola"],
+]
+dicas = [
+  "Conte como ontem, só que palavras.",
+  "Depois, ande pelo dicionário guardando a melhor.",
+  "\"Melhor\": maior contagem; empatou, menor palavra.",
+]
+referencias = [
+]
+conceito = """
+Desempate é parte da especificação, não detalhe. Um truque: `min(f, key=lambda p: (-f[p], p))`
+ordena pela contagem (decrescente) e depois pela palavra: tuplas comparam elemento por elemento.
+"""

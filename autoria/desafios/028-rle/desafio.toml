@@ -1,0 +1,36 @@
+id = 28
+slug = "rle"
+titulo = "Compressão RLE"
+arco = 3
+nivel = 4
+tags = ["strings", "laço"]
+usa = [24]
+assinatura = "def resolver(texto: str) -> str"
+enunciado = """
+Cada sequência de letras iguais vira letra + quantidade:
+`"aaabcc" → "a3b1c2"`.
+"""
+exemplos = [
+  { entrada = ["aaabcc"] },
+  { entrada = ["abc"] },
+]
+testes = [
+  [""],
+  ["a"],
+  ["aaaaaaaaaaaa"],
+  ["aabbaa"],
+  ["zzzzyzz"],
+  ["abababab"],
+]
+dicas = [
+  "Ande pela string lembrando a letra atual e quantas vezes ela apareceu.",
+  "Quando a letra muda, \"feche\" o grupo anterior.",
+  "Não esqueça de fechar o último grupo depois do laço.",
+]
+referencias = [
+  { titulo = "Run-length encoding (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Run-length_encoding" },
+]
+conceito = """
+"Fechar o último grupo depois do laço" é um bug clássico: o laço só fecha grupos quando vê a próxima letra,
+e a última não tem próxima. Agrupar elementos consecutivos aparece muito (logs, sinais, imagens).
+"""

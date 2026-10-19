@@ -1,0 +1,39 @@
+id = 77
+slug = "palindromo-ponteiros"
+titulo = "Palíndromo com ponteiros"
+arco = 8
+nivel = 4
+tags = ["dois ponteiros", "revisão"]
+usa = [23, 55, 71]
+assinatura = "def resolver(s: str) -> bool"
+enunciado = """
+Palíndromo considerando só letras e números, sem diferenciar maiúsculas.
+Sem criar uma string limpa: dois ponteiros pulando o resto.
+"""
+exemplos = [
+  { entrada = ["A man, a plan, a canal: Panama"] },
+  { entrada = ["race a car"] },
+]
+testes = [
+  [""],
+  [" "],
+  [".,"],
+  ["a."],
+  ["0P"],
+  ["Ame a ema!"],
+  ["No 'x' in Nixon"],
+  ["ab_a"],
+]
+dicas = [
+  "Mesmos ponteiros do dia 71.",
+  "Antes de comparar, avance cada ponteiro enquanto ele estiver num caractere que não conta.",
+  "`c.isalnum()` e `c.lower()`.",
+]
+referencias = [
+]
+conceito = """
+Terceira vez que você resolve palíndromo (dias 23, 55 e hoje), cada vez com outra técnica.
+A versão de hoje usa memória O(1): não cria nenhuma string nova.
+"""
+[criterios]
+proibido = ["reversed", "reverse", "join", "replace", "filter"]

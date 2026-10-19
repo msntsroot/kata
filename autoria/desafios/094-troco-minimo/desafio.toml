@@ -1,0 +1,40 @@
+id = 94
+slug = "troco-minimo"
+titulo = "Troco mínimo"
+arco = 10
+nivel = 6
+tags = ["programação dinâmica", "guloso"]
+usa = [6, 91, 92]
+assinatura = "def resolver(moedas: list, valor: int) -> int"
+enunciado = """
+O menor número de moedas que somam `valor` (cada moeda pode repetir). Impossível: `-1`.
+Com `[1, 3, 4]` e 6, o guloso dá 4+1+1, mas 3+3 é melhor.
+"""
+exemplos = [
+  { entrada = [[1, 3, 4], 6] },
+  { entrada = [[2], 3] },
+  { entrada = [[1, 5, 10, 25], 63] },
+]
+testes = [
+  [[1], 0],
+  [[7], 14],
+  [[2, 5], 3],
+  [[186, 419, 83, 408], 6249],
+  [[1, 7, 10], 14],
+  [[3, 7], 5],
+  [[1, 2, 5], 10000],
+]
+dicas = [
+  "Guloso não serve. Pense: qual foi a última moeda usada?",
+  "`melhor[v] = 1 + min(melhor[v - m])` para cada moeda `m <= v`.",
+  "Uma lista de 0 até valor, começando com `melhor[0] = 0` e o resto \"infinito\".",
+]
+referencias = [
+  { titulo = "Problema do troco (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Problema_do_troco" },
+]
+conceito = """
+Lembra do dia 6? O guloso funcionava com o real por sorte do sistema de moedas. DP testa todas as
+"últimas moedas" e funciona sempre, em O(valor × moedas).
+"""
+[criterios]
+tempo = 4

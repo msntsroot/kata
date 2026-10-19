@@ -1,0 +1,36 @@
+id = 14
+slug = "soma-digitos"
+titulo = "Soma dos dígitos"
+arco = 2
+nivel = 3
+tags = ["laço", "while"]
+usa = [13]
+assinatura = "def resolver(n: int) -> int"
+enunciado = """
+Some os dígitos de `n >= 0`, sem converter para texto.
+"""
+exemplos = [
+  { entrada = [1234] },
+  { entrada = [0] },
+]
+testes = [
+  [9],
+  [10],
+  [999],
+  [1000001],
+  [987654321],
+  [55],
+]
+dicas = [
+  "Ontem você contava os dígitos; hoje, some-os.",
+  "`n % 10` é o último dígito.",
+  "Some `n % 10` e depois faça `n //= 10`, até zerar.",
+]
+referencias = [
+]
+conceito = """
+Mesmo laço do dia 13, outra conta. Reconhecer que um problema novo é "aquele laço com outra operação"
+é metade da programação.
+"""
+[criterios]
+proibido = ["str", "map", "sum"]

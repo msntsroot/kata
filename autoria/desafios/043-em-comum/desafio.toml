@@ -1,0 +1,29 @@
+id = 43
+slug = "em-comum"
+titulo = "Em comum"
+arco = 5
+nivel = 3
+tags = ["conjuntos"]
+usa = [34]
+assinatura = "def resolver(a: list, b: list) -> list"
+enunciado = """
+Os valores que aparecem nas duas listas, sem repetir, em ordem crescente.
+"""
+exemplos = [
+  { entrada = [[1, 2, 2, 3], [2, 3, 4]] },
+  { entrada = [[1], [2]] },
+]
+dicas = [
+  "Lembra do `in` lento do dia 34?",
+  "`set(a)` cria um conjunto: sem repetidos e com `in` instantâneo.",
+  "`set(a) & set(b)` é a interseção. Depois, `sorted(...)`.",
+]
+referencias = [
+  { titulo = "Conjuntos (set)", url = "https://docs.python.org/pt-br/3/tutorial/datastructures.html#sets" },
+]
+conceito = """
+`set` responde "está aqui?" em tempo constante, usando hash. Com 20 mil itens, a versão com listas
+faria 400 milhões de comparações; com sets, 40 mil.
+"""
+[criterios]
+tempo = 3

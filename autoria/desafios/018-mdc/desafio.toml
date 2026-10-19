@@ -1,0 +1,41 @@
+id = 18
+slug = "mdc"
+titulo = "MDC de Euclides"
+arco = 2
+nivel = 4
+tags = ["laço", "matemática", "algoritmo"]
+usa = [1]
+assinatura = "def resolver(a: int, b: int) -> int"
+enunciado = """
+Maior divisor comum de `a, b >= 0` (não ambos 0).
+Euclides: `mdc(a, b) = mdc(b, a % b)`, e `mdc(a, 0) = a`.
+"""
+exemplos = [
+  { entrada = [12, 18] },
+  { entrada = [17, 5] },
+  { entrada = [0, 9] },
+]
+testes = [
+  [9, 0],
+  [100, 75],
+  [270, 192],
+  [1071, 462],
+  [1, 1],
+  [123456, 7890],
+  [1099511627776, 3656158440062976],
+  [7, 49],
+]
+dicas = [
+  "A regra já está no enunciado: troque `(a, b)` por `(b, a % b)`.",
+  "Repita até `b` virar 0.",
+  "`while b: a, b = b, a % b` e retorne `a`.",
+]
+referencias = [
+  { titulo = "Algoritmo de Euclides (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Algoritmo_de_Euclides" },
+]
+conceito = """
+Um dos algoritmos mais antigos que existem (c. 300 a.C.) e ainda um dos mais rápidos.
+`a, b = b, a % b` troca os dois de uma vez, sem variável temporária.
+"""
+[criterios]
+proibido = ["gcd", "math"]

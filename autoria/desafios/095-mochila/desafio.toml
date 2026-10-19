@@ -1,0 +1,30 @@
+id = 95
+slug = "mochila"
+titulo = "A mochila"
+arco = 10
+nivel = 7
+tags = ["programação dinâmica"]
+usa = [94]
+assinatura = "def resolver(pesos: list, valores: list, cap: int) -> int"
+enunciado = """
+Cada item tem peso e valor; leve no máximo um de cada.
+Maior valor com peso total `<= cap`? Até 100 itens, `cap` até 5000.
+"""
+exemplos = [
+  { entrada = [[1, 3, 4, 5], [1, 4, 5, 7], 7] },
+  { entrada = [[5], [10], 4] },
+]
+dicas = [
+  "Para cada item: levar ou não levar.",
+  "`melhor[c]` = maior valor com capacidade c usando os itens vistos até agora.",
+  "Para cada item, percorra `c` de `cap` até `peso` (de trás pra frente!): `melhor[c] = max(melhor[c], melhor[c - p] + v)`.",
+]
+referencias = [
+  { titulo = "Problema da mochila (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Problema_da_mochila" },
+]
+conceito = """
+"Levar ou não levar" é a decisão; a capacidade restante é o estado. Percorrer de trás para frente
+garante que cada item seja usado uma vez só (de frente para trás vira o troco, com repetição).
+"""
+[criterios]
+tempo = 5

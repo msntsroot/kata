@@ -1,0 +1,38 @@
+id = 27
+slug = "numero-palindromo"
+titulo = "Número palíndromo"
+arco = 3
+nivel = 3
+tags = ["laço", "revisão"]
+usa = [16, 23]
+assinatura = "def resolver(n: int) -> bool"
+enunciado = """
+`n >= 0` lê igual dos dois lados? Sem converter para texto.
+"""
+exemplos = [
+  { entrada = [12321] },
+  { entrada = [123] },
+  { entrada = [7] },
+]
+testes = [
+  [0],
+  [10],
+  [11],
+  [1001],
+  [1000021],
+  [123454321],
+  [100],
+]
+dicas = [
+  "Você já inverte números.",
+  "Compare o número com o inverso dele.",
+  "Guarde o original antes de destruí-lo no `while`.",
+]
+referencias = [
+]
+conceito = """
+Palíndromo de texto (dia 23) + número invertido (dia 16) = este. Muitas vezes o problema novo
+é a composição de dois antigos.
+"""
+[criterios]
+proibido = ["str", "reversed", "repr", "format"]

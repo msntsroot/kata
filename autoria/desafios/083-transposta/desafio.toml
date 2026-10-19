@@ -1,0 +1,35 @@
+id = 83
+slug = "transposta"
+titulo = "Transposta"
+arco = 9
+nivel = 3
+tags = ["matriz"]
+usa = [39]
+assinatura = "def resolver(m: list) -> list"
+enunciado = """
+Linhas viram colunas: `t[j][i] = m[i][j]`. `m` não é vazia.
+"""
+exemplos = [
+  { entrada = [[[1, 2, 3], [4, 5, 6]]] },
+  { entrada = [[[1]]] },
+]
+testes = [
+  [[[1, 2]]],
+  [[[1], [2], [3]]],
+  [[[1, 2], [3, 4]]],
+  [[[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]],
+  [[[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15], [16, 17, 18, 19]]],
+]
+dicas = [
+  "A matriz nova tem `len(m[0])` linhas e `len(m)` colunas.",
+  "Linha j da nova = coluna j da antiga.",
+  "`[[m[i][j] for i in range(len(m))] for j in range(len(m[0]))]`.",
+]
+referencias = [
+]
+conceito = """
+Matriz é lista de listas: `m[i][j]` é linha i, coluna j. Pensar em índices (quem vai para onde)
+resolve a maioria dos problemas de matriz. Em Python, `list(zip(*m))` é o atalho.
+"""
+[criterios]
+proibido = ["zip", "numpy"]

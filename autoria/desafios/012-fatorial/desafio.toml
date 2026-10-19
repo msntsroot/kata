@@ -1,0 +1,37 @@
+id = 12
+slug = "fatorial"
+titulo = "Fatorial"
+arco = 2
+nivel = 2
+tags = ["laço"]
+usa = [11]
+assinatura = "def resolver(n: int) -> int"
+enunciado = """
+`n! = 1 × 2 × ... × n`, e `0! = 1`.
+"""
+exemplos = [
+  { entrada = [5] },
+  { entrada = [0] },
+]
+testes = [
+  [1],
+  [2],
+  [10],
+  [20],
+  [3],
+  [30],
+]
+dicas = [
+  "É o acumulador de ontem, com outra operação.",
+  "Qual é o neutro da multiplicação?",
+  "Comece em 1 e multiplique por cada i de 2 até n.",
+]
+referencias = [
+  { titulo = "Fatorial (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Fatorial" },
+]
+conceito = """
+O acumulador começa no elemento neutro da operação: 0 para soma, 1 para produto, "" para texto.
+Inteiros em Python não estouram: `30!` cabe sem problema.
+"""
+[criterios]
+proibido = ["math", "factorial"]

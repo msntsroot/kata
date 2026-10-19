@@ -1,0 +1,38 @@
+id = 16
+slug = "inverte-numero"
+titulo = "Número ao contrário"
+arco = 2
+nivel = 3
+tags = ["laço", "while"]
+usa = [13, 14]
+assinatura = "def resolver(n: int) -> int"
+enunciado = """
+Inverta os dígitos de `n >= 0`, sem texto: `123 → 321`, `120 → 21`.
+"""
+exemplos = [
+  { entrada = [123] },
+  { entrada = [120] },
+  { entrada = [7] },
+]
+testes = [
+  [0],
+  [10],
+  [1001],
+  [987654321],
+  [1000],
+  [12321],
+  [45],
+]
+dicas = [
+  "Você já sabe tirar o último dígito. Onde colocá-lo?",
+  "Monte o número novo da esquerda pra direita: cada dígito novo empurra os outros uma casa.",
+  "`inv = inv * 10 + n % 10`.",
+]
+referencias = [
+]
+conceito = """
+`inv * 10 + d` é como se "escreve" um dígito à direita de um número. É exatamente
+o que acontece quando você digita numa calculadora.
+"""
+[criterios]
+proibido = ["str", "reversed", "join"]

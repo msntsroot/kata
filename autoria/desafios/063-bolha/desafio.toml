@@ -1,0 +1,39 @@
+id = 63
+slug = "bolha"
+titulo = "Bolha"
+arco = 7
+nivel = 3
+tags = ["ordenação"]
+usa = [32]
+assinatura = "def resolver(nums: list, k: int) -> list"
+enunciado = """
+Bubble sort: cada passada compara vizinhos da esquerda para a direita e troca se estiverem fora de ordem.
+Retorne a lista depois de exatamente `k` passadas (ou ordenada, se acabar antes).
+"""
+exemplos = [
+  { entrada = [[5, 1, 4, 2, 8], 1] },
+  { entrada = [[5, 1, 4, 2, 8], 2] },
+]
+testes = [
+  [[], 3],
+  [[1], 1],
+  [[3, 2, 1], 1],
+  [[3, 2, 1], 5],
+  [[9, 8, 7, 6, 5, 4, 3, 2, 1], 3],
+  [[2, 2, 1, 1], 1],
+  [[30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1], 10],
+]
+dicas = [
+  "Uma passada: `for i in range(len(nums) - 1)`, troque `nums[i]` e `nums[i+1]` se preciso.",
+  "Repita a passada `k` vezes.",
+  "Trocar: `nums[i], nums[i + 1] = nums[i + 1], nums[i]`.",
+]
+referencias = [
+  { titulo = "Bubble sort (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Bubble_sort" },
+]
+conceito = """
+Depois de cada passada, o maior que faltava "borbulha" para o fim. Simples e lento: O(n²).
+Ver o estado depois de k passadas é o que mostra se você entendeu o algoritmo, não só o resultado.
+"""
+[criterios]
+proibido = ["sorted", "sort", "heapq", "bisect"]

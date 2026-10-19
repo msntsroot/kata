@@ -1,0 +1,37 @@
+id = 51
+slug = "fatorial-recursivo"
+titulo = "Fatorial, de novo"
+arco = 6
+nivel = 3
+tags = ["recursão"]
+usa = [12]
+assinatura = "def resolver(n: int) -> int"
+enunciado = """
+`n!` de novo, agora com recursão: `n! = n × (n-1)!` e `0! = 1`.
+"""
+exemplos = [
+  { entrada = [5] },
+  { entrada = [0] },
+]
+testes = [
+  [1],
+  [2],
+  [10],
+  [20],
+  [100],
+  [7],
+]
+dicas = [
+  "Escreva a definição do enunciado em Python, quase literalmente.",
+  "Toda recursão precisa de um caso que para: aqui, `n == 0`.",
+  "`return 1 if n == 0 else n * resolver(n - 1)`.",
+]
+referencias = [
+  { titulo = "Recursão (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Recursividade_(ci%C3%AAncia_da_computa%C3%A7%C3%A3o)" },
+]
+conceito = """
+Recursão: resolver um problema usando a solução de uma versão menor dele mesmo.
+Duas partes sempre: o caso base (para) e o passo (diminui). Sem o caso base, `RecursionError`.
+"""
+[criterios]
+recursivo = true

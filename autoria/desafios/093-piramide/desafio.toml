@@ -1,0 +1,29 @@
+id = 93
+slug = "piramide"
+titulo = "Descendo a pirâmide"
+arco = 10
+nivel = 5
+tags = ["programação dinâmica"]
+usa = [92]
+assinatura = "def resolver(p: list) -> int"
+enunciado = """
+A linha `i` da pirâmide tem `i + 1` números. Do topo, desça para um dos dois vizinhos de baixo.
+Menor soma possível até a base? Até 500 linhas.
+"""
+exemplos = [
+  { entrada = [[[2], [3, 4], [6, 5, 7], [4, 1, 8, 3]]] },
+  { entrada = [[[-10]]] },
+]
+dicas = [
+  "Testar todos os caminhos são 2ⁿ: impossível com 500 linhas.",
+  "De baixo para cima: o melhor a partir de uma posição é ela mesma + o melhor dos dois de baixo.",
+  "Comece com a última linha e vá subindo, `linha[j] + min(abaixo[j], abaixo[j + 1])`.",
+]
+referencias = [
+]
+conceito = """
+Bottom-up: resolver os menores primeiro e subir. 2⁵⁰⁰ caminhos viram ~125 mil contas.
+Cada posição guarda "o melhor que dá pra fazer daqui", e o passado inteiro deixa de importar.
+"""
+[criterios]
+tempo = 4

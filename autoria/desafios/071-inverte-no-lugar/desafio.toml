@@ -1,0 +1,37 @@
+id = 71
+slug = "inverte-no-lugar"
+titulo = "Inverter no lugar"
+arco = 8
+nivel = 3
+tags = ["dois ponteiros"]
+usa = [22]
+assinatura = "def resolver(nums: list) -> list"
+enunciado = """
+Inverta `nums` trocando elementos dentro dela mesma (sem criar outra lista)
+e retorne-a.
+"""
+exemplos = [
+  { entrada = [[1, 2, 3, 4]] },
+  { entrada = [[1, 2, 3]] },
+]
+testes = [
+  [[]],
+  [[1]],
+  [[1, 2]],
+  [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
+  [["a", "b", "c"]],
+  [[5, 5, 1]],
+]
+dicas = [
+  "Um índice na ponta esquerda, outro na direita.",
+  "Troque os dois e aproxime-os.",
+  "`while i < j: nums[i], nums[j] = nums[j], nums[i]; i += 1; j -= 1`.",
+]
+referencias = [
+]
+conceito = """
+Dois ponteiros vindo das pontas: n/2 trocas e nenhuma memória extra. É o padrão base
+do arco inteiro: cada ponteiro guarda uma parte do problema já resolvida.
+"""
+[criterios]
+proibido = ["reversed", "reverse", "list", "append", "insert"]

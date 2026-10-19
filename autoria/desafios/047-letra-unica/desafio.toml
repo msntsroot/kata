@@ -1,0 +1,33 @@
+id = 47
+slug = "letra-unica"
+titulo = "A primeira sozinha"
+arco = 5
+nivel = 4
+tags = ["dicionários", "revisão"]
+usa = [41]
+assinatura = "def resolver(texto: str) -> str"
+enunciado = """
+O primeiro caractere que aparece uma vez só. Nenhum: `""`.
+"""
+exemplos = [
+  { entrada = ["abacabad"] },
+  { entrada = ["aabb"] },
+]
+testes = [
+  [""],
+  ["z"],
+  ["kata"],
+  ["aabbc"],
+  ["xxyzzy"],
+  ["abcabcd"],
+]
+dicas = [
+  "Primeiro conte tudo, depois procure.",
+  "Duas passadas: a primeira monta as contagens.",
+  "Na segunda, ande na ordem do texto e retorne a primeira com contagem 1.",
+]
+referencias = [
+]
+conceito = """
+Mais um problema de "duas passadas". A primeira coleta informação global, a segunda decide.
+"""

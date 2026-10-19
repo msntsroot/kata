@@ -1,0 +1,39 @@
+id = 6
+slug = "notas-e-moedas"
+titulo = "Notas e moedas"
+arco = 1
+nivel = 3
+tags = ["divisão inteira", "resto"]
+usa = [5]
+assinatura = "def resolver(centavos: int) -> list"
+enunciado = """
+Valores: `[10000, 5000, 2000, 1000, 500, 200, 100, 50, 25, 10, 5, 1]` centavos.
+Retorne quantas unidades de cada um, nessa ordem, usando sempre o maior possível.
+"""
+exemplos = [
+  { entrada = [3789] },
+  { entrada = [100] },
+]
+testes = [
+  [0],
+  [1],
+  [99],
+  [18888],
+  [12345],
+  [500],
+  [41],
+  [100000],
+]
+dicas = [
+  "É o relógio de ontem, com mais unidades.",
+  "Para cada valor, da maior para a menor: quantas cabem? Depois tire o que usou.",
+  "`qtd = centavos // valor` e `centavos = centavos % valor`, dentro de um `for`.",
+]
+referencias = [
+  { titulo = "for (tutorial Python)", url = "https://docs.python.org/pt-br/3/tutorial/controlflow.html#for-statements" },
+]
+conceito = """
+Usar sempre a maior moeda possível é um algoritmo guloso. Com o sistema de moedas do
+real ele dá o menor número de peças, mas não com qualquer sistema: você vai
+voltar a isso no arco 10.
+"""

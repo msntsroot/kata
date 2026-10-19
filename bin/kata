@@ -1,0 +1,80 @@
+#!/usr/bin/env python3
+"""kata: um desafio de lógica por dia, sem IA.
+
+  kata              abre o desafio do dia
+  kata status       JSON para a waybar
+  kata lembrete     notifica se o desafio de hoje está pendente (timer do systemd)
+  kata treino N     refaz o desafio N (sem XP, não mexe na ofensiva)
+"""
+import json
+import os
+import subprocess
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+
+from kata import progresso as P  # noqa: E402
+from kata.db import Desafios, Progresso  # noqa: E402
+
+
+def contexto():
+    des, prog = Desafios(), Progresso()
+    dia = P.hoje()
+    resolvidos = prog.resolvidos()
+    id_, status = P.desafio_do_dia(resolvidos, des.total(), dia)
+    of = P.ofensiva(set(resolvidos.values()), dia)
+    return des, prog, id_, status, of
+
+
+def status():
+    des, prog, id_, st, of = contexto()
+    if st == "fim":
+        print(json.dumps({"text": "100", "tooltip": "você fez os 100", "class": "feito"}))
+        return
+    d = des.get(id_)
+    if st == "feito":
+        tip = f"#{id_} {d['titulo']} ✓\nvolte amanhã"
+    else:
+        tip = f"#{id_} {d['titulo']}\nnível {d['nivel']}"
+    print(json.dumps({"text": str(of["atual"]), "tooltip": tip, "class": st, "alt": st}, ensure_ascii=False))
+
+
+def lembrete():
+    from datetime import datetime
+    des, prog, id_, st, of = contexto()
+    if st != "pendente":
+        return
+    d = des.get(id_)
+    hora = int(os.environ.get("KATA_HORA", datetime.now().hour))
+    if of["atual"] and hora >= 19:
+        titulo, urg = f"sua ofensiva de {of['atual']} dia{'s' if of['atual'] > 1 else ''} acaba hoje", "critical"
+    elif hora >= 19:
+        titulo, urg = "ainda dá tempo do kata de hoje", "normal"
+    else:
+        titulo, urg = "kata do dia", "low"
+    subprocess.run(["notify-send", "-a", "kata", "-u", urg, "-i", "accessories-text-editor",
+                    titulo, f"#{id_} {d['titulo']} · {'●' * d['nivel']}"])
+
+
+def main():
+    args = sys.argv[1:]
+    if not args:
+        from kata.app import main as app
+        app()
+    elif args[0] == "status":
+        status()
+    elif args[0] == "lembrete":
+        lembrete()
+    elif args[0] == "treino" and len(args) == 2 and args[1].isdigit():
+        n = int(args[1])
+        des, prog, id_, st, _ = contexto()
+        if n not in prog.resolvidos():
+            sys.exit(f"o #{n} ainda não foi resolvido no modo diário")
+        from kata.app import main as app
+        app(treino=n)
+    else:
+        sys.exit(__doc__)
+
+
+if __name__ == "__main__":
+    main()

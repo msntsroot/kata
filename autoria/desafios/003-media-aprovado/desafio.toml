@@ -1,0 +1,28 @@
+id = 3
+slug = "media-aprovado"
+titulo = "Passou?"
+arco = 1
+nivel = 2
+tags = ["condicional", "aritmética"]
+usa = []
+assinatura = "def resolver(n1: float, n2: float, n3: float) -> str"
+enunciado = """
+Média das três notas:
+`>= 7` → `"aprovado"` · `>= 5` → `"recuperacao"` · senão `"reprovado"`.
+"""
+exemplos = [
+  { entrada = [8, 7, 9], saida = "aprovado" },
+  { entrada = [5, 5, 4], saida = "reprovado" },
+]
+testes = [[7, 7, 7], [5, 5, 5], [4.9, 5, 5], [10, 0, 11], [6.9, 7, 7], [0, 0, 0], [9.5, 3, 4], [10, 10, 1]]
+dicas = [
+  "Primeiro a média, depois as faixas.",
+  "Teste da faixa mais alta para a mais baixa: `if`, `elif`, `else`.",
+  "`media = (n1 + n2 + n3) / 3`.",
+]
+referencias = []
+conceito = """
+Ao checar faixas, a ordem dos `if` importa: testando do maior para o menor, cada
+`elif` já sabe que as condições anteriores falharam, então não precisa repetir
+`media < 7`.
+"""

@@ -1,0 +1,42 @@
+id = 10
+slug = "data-valida"
+titulo = "Chefão: data válida"
+arco = 1
+nivel = 4
+tags = ["condicional", "chefão"]
+usa = [4]
+assinatura = "def resolver(dia: int, mes: int, ano: int) -> bool"
+enunciado = """
+A data existe no calendário? Anos de 1 em diante.
+Fevereiro tem 29 dias nos bissextos.
+"""
+exemplos = [
+  { entrada = [29, 2, 2024] },
+  { entrada = [29, 2, 2023] },
+  { entrada = [31, 4, 2026] },
+]
+testes = [
+  [31, 12, 2026],
+  [0, 1, 2026],
+  [1, 13, 2026],
+  [1, 0, 2026],
+  [29, 2, 1900],
+  [29, 2, 2000],
+  [30, 2, 2000],
+  [31, 7, 2026],
+  [31, 6, 2026],
+  [1, 1, 0],
+  [15, 10, 1582],
+  [32, 1, 2026],
+]
+dicas = [
+  "Você já sabe dizer se um ano é bissexto: reaproveite.",
+  "Uma lista com os dias de cada mês resolve 11 dos 12 meses.",
+  "`dias = [31, 29 if bissexto else 28, 31, 30, ...]`; depois `1 <= dia <= dias[mes - 1]`.",
+]
+referencias = [
+]
+conceito = """
+Reaproveitar: a regra de bissexto do dia 4 virou uma peça deste. Definir funções auxiliares
+(`def bissexto(ano)`) fora do `resolver` deixa cada parte pequena e testável.
+"""

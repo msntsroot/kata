@@ -1,0 +1,39 @@
+id = 50
+slug = "romano-para-inteiro"
+titulo = "Chefão: números romanos"
+arco = 5
+nivel = 5
+tags = ["dicionários", "strings", "chefão"]
+usa = [41]
+assinatura = "def resolver(romano: str) -> int"
+enunciado = """
+`I=1 V=5 X=10 L=50 C=100 D=500 M=1000`.
+Um símbolo menor antes de um maior subtrai: `IV = 4`, `XC = 90`.
+"""
+exemplos = [
+  { entrada = ["XIV"] },
+  { entrada = ["MCMXCIV"] },
+  { entrada = ["III"] },
+]
+testes = [
+  ["I"],
+  ["IX"],
+  ["XL"],
+  ["MMXXVI"],
+  ["CDXLIV"],
+  ["MMMCMXCIX"],
+  ["LVIII"],
+  ["DCCC"],
+]
+dicas = [
+  "Um dicionário para os valores.",
+  "Olhe o símbolo e o próximo: se o próximo for maior, este subtrai.",
+  "Some `v[s]` ou subtraia, comparando com `v[romano[i + 1]]` quando existir.",
+]
+referencias = [
+  { titulo = "Numeração romana (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Numera%C3%A7%C3%A3o_romana" },
+]
+conceito = """
+Olhar o próximo elemento (lookahead) é um padrão de leitura de sequências: parsers e
+compiladores fazem isso o tempo todo. No arco 6 você faz o caminho inverso.
+"""

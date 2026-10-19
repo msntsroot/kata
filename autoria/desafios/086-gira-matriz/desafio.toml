@@ -1,0 +1,35 @@
+id = 86
+slug = "gira-matriz"
+titulo = "Girar 90°"
+arco = 9
+nivel = 4
+tags = ["matriz"]
+usa = [83, 71]
+assinatura = "def resolver(m: list) -> list"
+enunciado = """
+Gire a matriz quadrada 90° no sentido horário.
+"""
+exemplos = [
+  { entrada = [[[1, 2], [3, 4]]] },
+  { entrada = [[[1, 2, 3], [4, 5, 6], [7, 8, 9]]] },
+]
+testes = [
+  [[[1]]],
+  [[[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15]]],
+  [[[0, 1, 2, 3, 4], [5, 6, 7, 8, 9], [10, 11, 12, 13, 14], [15, 16, 17, 18, 19], [20, 21, 22, 23, 24]]],
+  [[["a", "b"], ["c", "d"]]],
+  [[[0, 1], [1, 0]]],
+]
+dicas = [
+  "Para onde vai `m[i][j]`?",
+  "Transpor e depois inverter cada linha dá o giro.",
+  "Ou direto: `novo[j][n - 1 - i] = m[i][j]`.",
+]
+referencias = [
+]
+conceito = """
+Girar = transpor + espelhar. Decompor uma transformação difícil em duas fáceis que você já sabe
+fazer é um truque que vale muito além de matrizes.
+"""
+[criterios]
+proibido = ["numpy", "rot90"]

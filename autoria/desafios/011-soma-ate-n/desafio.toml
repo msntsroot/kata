@@ -1,0 +1,39 @@
+id = 11
+slug = "soma-ate-n"
+titulo = "Somar até n"
+arco = 2
+nivel = 2
+tags = ["laço"]
+usa = []
+assinatura = "def resolver(n: int) -> int"
+enunciado = """
+Retorne `1 + 2 + ... + n`, somando um por um com um laço.
+Para `n <= 0`, retorne 0.
+"""
+exemplos = [
+  { entrada = [4] },
+  { entrada = [1] },
+  { entrada = [0] },
+]
+testes = [
+  [10],
+  [100],
+  [-5],
+  [2],
+  [999],
+  [50],
+]
+dicas = [
+  "Uma variável começa em 0 e vai acumulando.",
+  "`range(1, n + 1)` passa por 1, 2, ..., n.",
+  "`total += i` dentro do `for`.",
+]
+referencias = [
+  { titulo = "range() (tutorial)", url = "https://docs.python.org/pt-br/3/tutorial/controlflow.html#the-range-function" },
+]
+conceito = """
+O acumulador (começa no neutro e vai somando) é o padrão de laço mais comum que existe.
+Gauss achou um atalho: `n * (n + 1) // 2`. Laço e fórmula dão o mesmo resultado; a fórmula não depende do tamanho de n.
+"""
+[criterios]
+proibido = ["sum"]

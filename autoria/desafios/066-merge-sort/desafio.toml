@@ -1,0 +1,31 @@
+id = 66
+slug = "merge-sort"
+titulo = "Merge sort"
+arco = 7
+nivel = 6
+tags = ["ordenação", "recursão"]
+usa = [40, 60]
+assinatura = "def resolver(nums: list) -> list"
+enunciado = """
+Ordene `nums` (até 50 mil números) com merge sort: divida ao meio,
+ordene cada metade, mescle. Sem `sort`/`sorted`.
+"""
+exemplos = [
+  { entrada = [[5, 2, 9, 1, 5, 6]] },
+  { entrada = [[]] },
+]
+dicas = [
+  "O chefão do arco 4 (mesclar ordenadas) é metade do trabalho.",
+  "Caso base: lista com 0 ou 1 elemento já está ordenada.",
+  "`meio = len(nums) // 2`; `mesclar(resolver(nums[:meio]), resolver(nums[meio:]))`.",
+]
+referencias = [
+  { titulo = "Merge sort (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Merge_sort" },
+]
+conceito = """
+Dividir e conquistar: log n níveis de divisão × n de trabalho por nível = O(n log n).
+Bubble com 50 mil números faria 2,5 bilhões de comparações; merge sort, menos de 1 milhão.
+"""
+[criterios]
+proibido = ["sorted", "sort", "heapq", "bisect", "merge"]
+tempo = 5

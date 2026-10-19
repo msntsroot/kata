@@ -1,0 +1,12 @@
+[Unit]
+Description=kata: lembretes ao longo do dia (só avisa se o desafio estiver pendente)
+
+[Timer]
+OnCalendar=*-*-* 10:00
+OnCalendar=*-*-* 14:00
+OnCalendar=*-*-* 19:00
+OnCalendar=*-*-* 21:30
+Persistent=false
+
+[Install]
+WantedBy=timers.target

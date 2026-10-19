@@ -1,0 +1,30 @@
+id = 72
+slug = "pares-soma-ordenada"
+titulo = "Pares que somam"
+arco = 8
+nivel = 5
+tags = ["dois ponteiros"]
+usa = [45, 71]
+assinatura = "def resolver(nums: list, alvo: int) -> int"
+enunciado = """
+`nums` está em ordem crescente, sem repetidos (até 200 mil).
+Quantos pares `i < j` têm `nums[i] + nums[j] == alvo`? Sem dicionário nem set.
+"""
+exemplos = [
+  { entrada = [[1, 2, 3, 4, 5, 6], 7] },
+  { entrada = [[1, 2], 10] },
+]
+dicas = [
+  "Um ponteiro no começo, outro no fim. Some os dois.",
+  "Soma pequena demais? Só aumentar ajuda: ande com o esquerdo. Grande demais: ande com o direito.",
+  "Bateu: conte e ande com os dois.",
+]
+referencias = [
+]
+conceito = """
+Com a lista ordenada, cada comparação elimina uma posição inteira: O(n), sem memória extra.
+O dicionário do dia 45 serve para listas desordenadas; aqui, a ordem já é informação.
+"""
+[criterios]
+proibido = ["dict", "set", "bisect", "index", "count"]
+tempo = 4

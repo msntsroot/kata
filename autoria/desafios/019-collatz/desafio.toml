@@ -1,0 +1,38 @@
+id = 19
+slug = "collatz"
+titulo = "Collatz"
+arco = 2
+nivel = 4
+tags = ["laço", "while"]
+usa = [1]
+assinatura = "def resolver(n: int) -> int"
+enunciado = """
+Par → `n / 2`. Ímpar → `3n + 1`.
+Quantos passos até chegar em 1?
+"""
+exemplos = [
+  { entrada = [6] },
+  { entrada = [1] },
+]
+testes = [
+  [2],
+  [3],
+  [7],
+  [27],
+  [97],
+  [871],
+  [1000000],
+  [16],
+]
+dicas = [
+  "Simule exatamente o que o enunciado diz.",
+  "`while n != 1:` e um contador.",
+  "Use `n // 2` (divisão inteira) para não virar float.",
+]
+referencias = [
+  { titulo = "Conjectura de Collatz (Wikipédia)", url = "https://pt.wikipedia.org/wiki/Conjectura_de_Collatz" },
+]
+conceito = """
+Ninguém conseguiu provar que todo número chega a 1, mas ninguém achou um que não chegue.
+Simulação é uma estratégia legítima: às vezes a melhor forma de resolver é fazer o que o enunciado manda.
+"""

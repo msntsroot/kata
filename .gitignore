@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.ruff_cache/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# gerado por autoria/build.py (29 MB, refaz com `python3 autoria/build.py`)
+data/desafios.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+
+# editor / sistema
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# local
+.env
+.claude/settings.local.json

@@ -1,0 +1,30 @@
+id = 1
+slug = "par-ou-impar"
+titulo = "Par ou ímpar"
+arco = 1
+nivel = 1
+tags = ["condicional", "resto"]
+usa = []
+assinatura = "def resolver(n: int) -> str"
+enunciado = """
+Receba um inteiro `n`.
+Retorne `"par"` ou `"impar"`.
+"""
+exemplos = [
+  { entrada = [4], saida = "par" },
+  { entrada = [7], saida = "impar" },
+]
+testes = [[0], [1], [-3], [-8], [1000001], [2026], [13]]
+dicas = [
+  "Pense no que sobra quando você divide por 2.",
+  "Em Python, `a % b` dá o resto da divisão de a por b.",
+  "Se `n % 2 == 0`, não sobrou nada.",
+]
+referencias = [
+  { titulo = "Operadores aritméticos (docs Python)", url = "https://docs.python.org/pt-br/3/library/stdtypes.html#numeric-types-int-float-complex" },
+]
+conceito = """
+O operador `%` (módulo) devolve o resto da divisão. Ele aparece o tempo todo:
+paridade, ciclos (dias da semana), dígitos de um número. Em Python, o resto de
+um negativo por 2 também é 0 ou 1, então `-3 % 2 == 1`.
+"""

@@ -1,0 +1,33 @@
+id = 17
+slug = "fizzbuzz-lista"
+titulo = "FizzBuzz até n"
+arco = 2
+nivel = 3
+tags = ["laço", "listas", "revisão"]
+usa = [9]
+assinatura = "def resolver(n: int) -> list"
+enunciado = """
+A lista do FizzBuzz de 1 até `n`.
+"""
+exemplos = [
+  { entrada = [5] },
+  { entrada = [1] },
+]
+testes = [
+  [15],
+  [0],
+  [30],
+  [16],
+  [3],
+]
+dicas = [
+  "Você já resolveu um número; agora são vários.",
+  "Comece com `[]` e use `.append()`.",
+  "Dentro do laço, a mesma lógica do dia 9 para cada `i`.",
+]
+referencias = [
+]
+conceito = """
+Separar "resolver um" de "repetir para todos" deixa o código simples: escreva uma função para um
+caso e chame-a num laço.
+"""

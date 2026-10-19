@@ -1,0 +1,40 @@
+id = 9
+slug = "fizzbuzz"
+titulo = "FizzBuzz"
+arco = 1
+nivel = 3
+tags = ["condicional", "resto"]
+usa = [1]
+assinatura = "def resolver(n: int) -> str"
+enunciado = """
+Múltiplo de 3 → `"Fizz"` · de 5 → `"Buzz"` · dos dois → `"FizzBuzz"`.
+Senão, o próprio número como texto.
+"""
+exemplos = [
+  { entrada = [3] },
+  { entrada = [10] },
+  { entrada = [15] },
+  { entrada = [7] },
+]
+testes = [
+  [1],
+  [30],
+  [33],
+  [50],
+  [45],
+  [98],
+  [0],
+  [99],
+]
+dicas = [
+  "Qual caso precisa ser testado primeiro?",
+  "Se testar o 3 antes, o 15 vira só \"Fizz\".",
+  "Múltiplo dos dois = múltiplo de 15. `str(n)` transforma em texto.",
+]
+referencias = [
+  { titulo = "Fizz buzz (Wikipedia)", url = "https://en.wikipedia.org/wiki/Fizz_buzz" },
+]
+conceito = """
+O clássico das entrevistas. A pegadinha é a ordem: a condição mais restritiva vem primeiro.
+Outra saída é montar a resposta: `s = ""`, soma "Fizz" se múltiplo de 3, "Buzz" se de 5, e `return s or str(n)`.
+"""

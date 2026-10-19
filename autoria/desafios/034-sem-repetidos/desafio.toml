@@ -1,0 +1,33 @@
+id = 34
+slug = "sem-repetidos"
+titulo = "Sem repetidos"
+arco = 4
+nivel = 3
+tags = ["listas"]
+usa = [31]
+assinatura = "def resolver(nums: list) -> list"
+enunciado = """
+Remova os repetidos mantendo a ordem da primeira aparição.
+"""
+exemplos = [
+  { entrada = [[3, 1, 3, 2, 1]] },
+  { entrada = [[]] },
+]
+testes = [
+  [[1, 1, 1]],
+  [[1, 2, 3]],
+  [[5, 4, 5, 4, 5]],
+  [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]],
+  [[0, -1, 0, -1, 2]],
+]
+dicas = [
+  "Monte uma lista nova e só adicione o que ainda não está nela.",
+  "`if x not in vistos:`.",
+  "Funciona. Mas `in` numa lista olha item por item: guarde isso para o arco 5.",
+]
+referencias = [
+]
+conceito = """
+`x in lista` percorre a lista inteira no pior caso. Com 10 mil itens, isso dentro de um laço vira
+100 milhões de comparações. No arco 5, `set` faz o mesmo teste em tempo constante.
+"""

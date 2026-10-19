@@ -1,0 +1,38 @@
+id = 8
+slug = "dia-da-semana"
+titulo = "Daqui a n dias"
+arco = 1
+nivel = 3
+tags = ["resto", "listas"]
+usa = [1, 5]
+assinatura = "def resolver(hoje: str, n: int) -> str"
+enunciado = """
+Dias: `"dom" "seg" "ter" "qua" "qui" "sex" "sab"`.
+Que dia será daqui a `n` dias? (`n` pode ser negativo.)
+"""
+exemplos = [
+  { entrada = ["seg", 3] },
+  { entrada = ["sab", 1] },
+  { entrada = ["dom", -1] },
+]
+testes = [
+  ["qua", 0],
+  ["qua", 7],
+  ["qui", 100],
+  ["ter", -10],
+  ["sex", 365],
+  ["dom", 13],
+  ["sab", -365],
+]
+dicas = [
+  "Coloque os dias numa lista: cada dia vira um número de 0 a 6.",
+  "`dias.index(hoje)` dá a posição de hoje.",
+  "`(posicao + n) % 7` volta para dentro da semana, até com n negativo.",
+]
+referencias = [
+  { titulo = "Listas (tutorial Python)", url = "https://docs.python.org/pt-br/3/tutorial/introduction.html#lists" },
+]
+conceito = """
+Tudo que é cíclico (dias, horas, ângulos, posições numa roda) se resolve com `%`.
+Em Python o resultado de `%` tem o sinal do divisor, então `-1 % 7 == 6`: o ciclo funciona nos dois sentidos.
+"""

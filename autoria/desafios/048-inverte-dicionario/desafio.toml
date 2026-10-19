@@ -1,0 +1,35 @@
+id = 48
+slug = "inverte-dicionario"
+titulo = "Dicionário do avesso"
+arco = 5
+nivel = 4
+tags = ["dicionários"]
+usa = [46]
+assinatura = "def resolver(d: dict) -> dict"
+enunciado = """
+Troque chaves por valores. Como valores podem repetir, cada valor aponta
+para a lista das chaves, em ordem alfabética.
+"""
+exemplos = [
+  { entrada = [{ ana = "SP", bia = "RJ", caio = "SP" }] },
+  { entrada = [{  }] },
+]
+testes = [
+  [{ a = "x" }],
+  [{ z = "1", y = "1", x = "1" }],
+  [{ a = "b", b = "a" }],
+  [{ p1 = "azul", p2 = "verde", p3 = "azul", p4 = "rosa" }],
+  [{ m = "1", n = "2", o = "1", p = "2", q = "3" }],
+]
+dicas = [
+  "Ande pelos pares com `d.items()`.",
+  "`novo.setdefault(valor, []).append(chave)`.",
+  "No fim, ordene cada lista.",
+]
+referencias = [
+  { titulo = "dict.setdefault", url = "https://docs.python.org/pt-br/3/library/stdtypes.html#dict.setdefault" },
+]
+conceito = """
+Índice invertido: em vez de "cada pessoa → cidade", "cada cidade → pessoas". É como buscadores
+funcionam: palavra → documentos que a contêm.
+"""
